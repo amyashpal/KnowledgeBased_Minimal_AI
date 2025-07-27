@@ -5,29 +5,39 @@ from typing import List, Optional
 import logging
 import os
 import json
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = FastAPI(title="History Service", version="1.0.0")
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Try MongoDB, fallback to file storage
-try:
-    from pymongo import MongoClient
-    MONGO_URL = os.getenv("MONGO_URL", "mongodb://localhost:27017/")
-    client = MongoClient(MONGO_URL, serverSelectionTimeoutMS=5000)
-    # Test connection
-    client.server_info()
-    db = client.ai_assistant
-    collection = db.chat_history
-    USE_MONGODB = True
-    logger.info("Using MongoDB for history storage")
-except Exception as e:
-    logger.warning(f"MongoDB not available: {e}")
-    logger.info("Falling back to file-based storage")
-    USE_MONGODB = False
-    
-    # File-based storage fallback
-    HISTORY_FILE = "chat_history.json"
+USE_MONGODB = False
+HISTORY_FILE = "chat_history.json"
+
+# Only try MongoDB if explicitly configured
+MONGO_URL = os.getenv("MONGO_URL")
+if MONGO_URL:
+    try:
+        from pymongo import MongoClient
+        client = MongoClient(MONGO_URL, serverSelectionTimeoutMS=2000, connectTimeoutMS=2000)
+        # Test connection with shorter timeout
+        client.server_info()
+        db = client.ai_assistant
+        collection = db.chat_history
+        USE_MONGODB = True
+        logger.info("✅ Using MongoDB for history storage")
+    except Exception as e:
+        logger.info(f"MongoDB connection failed, using file storage: {str(e)[:100]}...")
+        USE_MONGODB = False
+else:
+    logger.info("📁 Using file-based storage for history (MongoDB not configured)")
+
+# Initialize file-based storage
+if not USE_MONGODB:
     if not os.path.exists(HISTORY_FILE):
         with open(HISTORY_FILE, 'w') as f:
             json.dump([], f)

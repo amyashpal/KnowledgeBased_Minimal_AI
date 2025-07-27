@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import requests
 import asyncio
-from typing import Optional
+from typing import Optional, List
 import logging
 
 app = FastAPI(title="Chat Service", version="1.0.0")
@@ -22,35 +22,72 @@ class ChatResponse(BaseModel):
     chat_id: str
     response: str
     source: str  # "knowledge_base", "search", or "fallback"
+    confidence: Optional[float] = None
+    source_documents: Optional[List[str]] = []
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest):
     """Main chat endpoint that orchestrates the response"""
     try:
-        # First, try knowledge base
+        logger.info(f"🎯 Processing query: '{request.message[:50]}...'")
+        
+        # ALWAYS try knowledge base first with comprehensive checking
         kb_response = await query_knowledge_base(request.message)
         
-        # Check if knowledge base has relevant and useful information
+        # Enhanced knowledge base validation with lower thresholds
         kb_has_answer = (
             kb_response and 
             kb_response.get("relevant", False) and 
-            kb_response.get("confidence", 0) > 0.3 and
+            kb_response.get("confidence", 0) > 0.15 and  # Lowered from 0.3 to 0.15
             kb_response.get("answer") and
-            not kb_response.get("answer").startswith("No relevant information") and
-            not kb_response.get("answer").startswith("This document does not contain") and
-            len(kb_response.get("answer", "").strip()) > 20
+            not kb_response.get("answer").lower().startswith("no relevant information") and
+            not kb_response.get("answer").lower().startswith("no sufficiently relevant") and
+            not kb_response.get("answer").lower().startswith("this document does not contain") and
+            len(kb_response.get("answer", "").strip()) > 15  # Lowered from 20 to 15
         )
         
         if kb_has_answer:
             response_text = kb_response["answer"]
             source = "knowledge_base"
-            logger.info(f"✅ Knowledge base answered: {request.message[:50]}...")
+            confidence = kb_response.get("confidence", 0.0)
+            source_docs = kb_response.get("source_documents", [])
+            
+            logger.info(f"✅ Knowledge base answered with confidence {confidence:.3f}: {request.message[:50]}...")
+            logger.info(f"📚 Sources: {source_docs[:2]}")  # Log first 2 sources
+            
+            # Save to history
+            await save_to_history(request.chat_id, request.message, response_text)
+            
+            return ChatResponse(
+                chat_id=request.chat_id,
+                response=response_text,
+                source=source,
+                confidence=confidence,
+                source_documents=source_docs
+            )
+        
+        # If knowledge base doesn't have good answer, log why and fallback to search
+        if kb_response:
+            logger.info(f"❌ KB rejected - relevant: {kb_response.get('relevant')}, "
+                       f"confidence: {kb_response.get('confidence', 0):.3f}, "
+                       f"answer_length: {len(kb_response.get('answer', ''))}")
         else:
-            # Fallback to web search
-            logger.info(f"🔍 Falling back to search for: {request.message[:50]}...")
-            search_response = await query_search_service(request.message)
-            response_text = search_response.get("answer", "I'm sorry, I couldn't find relevant information.")
-            source = "search" if search_response.get("answer") else "fallback"
+            logger.info("❌ KB query failed completely")
+        
+        # Fallback to web search
+        logger.info(f"🔍 Falling back to search for: {request.message[:50]}...")
+        search_response = await query_search_service(request.message)
+        
+        if search_response and search_response.get("answer"):
+            response_text = search_response["answer"]
+            source = f"search_{search_response.get('source', 'unknown')}"
+            confidence = 0.5  # Default confidence for search results
+            source_docs = [f"Web search via {search_response.get('source', 'unknown')}"]
+        else:
+            response_text = "I'm sorry, I couldn't find relevant information in the knowledge base or through web search."
+            source = "fallback"
+            confidence = 0.0
+            source_docs = []
         
         # Save to history
         await save_to_history(request.chat_id, request.message, response_text)
@@ -58,11 +95,18 @@ async def chat(request: ChatRequest):
         return ChatResponse(
             chat_id=request.chat_id,
             response=response_text,
-            source=source
+            source=source,
+            confidence=confidence,
+            source_documents=source_docs
         )
     
     except Exception as e:
         logger.error(f"Error in chat endpoint: {e}")
+        # Try to provide a fallback response even on error
+        try:
+            await save_to_history(request.chat_id, request.message, "System error occurred")
+        except:
+            pass
         raise HTTPException(status_code=500, detail="Internal server error")
 
 @app.get("/chat/{chat_id}")

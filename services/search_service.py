@@ -5,6 +5,10 @@ import logging
 import re
 import os
 import json
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = FastAPI(title="Search Service", version="1.0.0")
 logging.basicConfig(level=logging.INFO)
@@ -20,9 +24,11 @@ except ImportError:
     logger.warning("duckduckgo-search not available, using fallback")
     from bs4 import BeautifulSoup
 
-# Gemini API configuration
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "YOUR_API_KEY")
+# Configuration from environment variables
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
+SEARCH_TIMEOUT = int(os.getenv("SEARCH_TIMEOUT", "30"))
+MAX_SEARCH_RESULTS = int(os.getenv("MAX_SEARCH_RESULTS", "10"))
 
 class SearchResponse(BaseModel):
     answer: str
@@ -190,7 +196,8 @@ async def scrape_duckduckgo_results(query: str) -> str:
 
 async def enhance_with_gemini(query: str, search_result: str) -> str:
     """Enhance search results using Gemini API"""
-    if not GEMINI_API_KEY or GEMINI_API_KEY == "your-gemini-api-key":
+    if not GEMINI_API_KEY:
+        logger.warning("Gemini API key not configured, skipping enhancement")
         return None
     
     try:
@@ -198,30 +205,50 @@ async def enhance_with_gemini(query: str, search_result: str) -> str:
 
 Search result: {search_result}
 
-Please provide a helpful, accurate answer in 2-3 sentences. Focus on directly answering the question."""
+Instructions:
+1. Provide a helpful, accurate answer in 2-3 sentences
+2. Focus on directly answering the question
+3. Use information from the search result
+4. Keep the response natural and conversational
+
+Answer:"""
 
         payload = {
             "contents": [{
                 "parts": [{"text": prompt}]
-            }]
+            }],
+            "generationConfig": {
+                "temperature": 0.4,
+                "topK": 40,
+                "topP": 0.95,
+                "maxOutputTokens": 150
+            }
         }
         
         headers = {
             "Content-Type": "application/json"
         }
         
+        logger.info(f"🤖 Enhancing search result with Gemini for: '{query[:30]}...'")
+        
         response = requests.post(
             f"{GEMINI_API_URL}?key={GEMINI_API_KEY}",
             headers=headers,
             json=payload,
-            timeout=15
+            timeout=20
         )
         
         if response.status_code == 200:
             data = response.json()
             if data.get("candidates") and data["candidates"][0].get("content"):
                 answer = data["candidates"][0]["content"]["parts"][0]["text"]
-                return clean_text(answer)
+                cleaned_answer = clean_text(answer)
+                
+                if cleaned_answer and len(cleaned_answer.strip()) > 10:
+                    logger.info(f"✅ Gemini enhanced search result: '{cleaned_answer[:50]}...'")
+                    return cleaned_answer
+        else:
+            logger.error(f"Gemini API error: {response.status_code} - {response.text}")
         
         return None
     
@@ -231,7 +258,7 @@ Please provide a helpful, accurate answer in 2-3 sentences. Focus on directly an
 
 async def get_gemini_direct_answer(query: str) -> str:
     """Get direct answer from Gemini API when search fails"""
-    if not GEMINI_API_KEY or GEMINI_API_KEY == "your-gemini-api-key":
+    if not GEMINI_API_KEY:
         return None
     
     try:

@@ -19,7 +19,7 @@ A comprehensive AI assistant system built with microservices architecture, featu
 - **Knowledge Base Service** (Port 8001): Document storage and semantic search
 - **Search Service** (Port 8002): Web search using DuckDuckGo + Gemini enhancement
 - **History Service** (Port 8003): Persistent conversation storage
-- **Web GUI** (Port 8080): Modern web interface and admin panel
+- **Web GUI** (Port 8080): Modern web interface and admin panel(Might Not Store Chat)
 
 ### Data Flow
 1. User sends message via web interface
