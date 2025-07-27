@@ -7,5 +7,140 @@
     "content_hash": "284012b32024cbf955b886b6cbc0a211",
     "upload_timestamp": "2025-07-27T21:54:46.727626",
     "chunk_length": 3011
+  },
+  {
+    "id": "python_basics.txt_0_e7e2be7b-0bc1-4b4d-b148-e9a78f0441ea",
+    "text": "Python is a high-level programming language known for its simplicity and readability. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Python has a large standard library and extensive third-party packages available through pip. Python is widely used in web development, data science, artificial intelligence, and automation.",
+    "filename": "python_basics.txt",
+    "chunk_id": 0,
+    "content_hash": "43a2f3d9b19b66b894051af913d760f9",
+    "upload_timestamp": "2025-07-27T22:05:23.160755",
+    "chunk_length": 390
+  },
+  {
+    "id": "machine_learning.txt_0_2d6f9233-bb0d-45db-8b1d-f05d102bcaa8",
+    "text": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "filename": "machine_learning.txt",
+    "chunk_id": 0,
+    "content_hash": "59c990638c6ebc05441ec153665a21f3",
+    "upload_timestamp": "2025-07-27T22:05:25.194696",
+    "chunk_length": 483
+  },
+  {
+    "id": "web_development.txt_0_ed35fb36-6636-4250-84bd-fee37a2efa5b",
+    "text": "Web development involves creating websites and web applications for the internet. Frontend development focuses on user interface and user experience using HTML, CSS, and JavaScript. Backend development handles server-side logic, databases, and API development. Full-stack developers work on both frontend and backend components. Modern web development uses frameworks like React, Vue.js, Django, and Flask.",
+    "filename": "web_development.txt",
+    "chunk_id": 0,
+    "content_hash": "b3f9861ae279ac412d92aa86959f35e7",
+    "upload_timestamp": "2025-07-27T22:05:27.235894",
+    "chunk_length": 406
+  },
+  {
+    "id": "data_science.txt_0_60b64c11-7470-4506-aed4-03a74dbddbe3",
+    "text": "Data science combines statistics, programming, and domain expertise to extract insights from data. The data science process includes data collection, cleaning, analysis, and visualization. Popular tools for data science include Python, R, SQL, and various libraries like pandas and numpy. Data scientists use machine learning algorithms to build predictive models. Data visualization helps communicate findings through charts, graphs, and dashboards.",
+    "filename": "data_science.txt",
+    "chunk_id": 0,
+    "content_hash": "06dcf54b3011a3cf13322c46dd52af03",
+    "upload_timestamp": "2025-07-27T22:05:29.290785",
+    "chunk_length": 450
+  },
+  {
+    "id": "duplicate_test.txt_0_09142315-7686-4a0b-a88f-047fecc9b0de",
+    "text": "This is a test document for duplicate detection.",
+    "filename": "duplicate_test.txt",
+    "chunk_id": 0,
+    "content_hash": "c866e9bfd90aba1c441f39f5f0548e85",
+    "upload_timestamp": "2025-07-27T22:06:34.669842",
+    "chunk_length": 48
+  },
+  {
+    "id": "python_guide.txt_0_cd495786-ec39-403d-9281-50f64e91d9a7",
+    "text": "Python is a versatile programming language known for its simplicity and readability. It supports multiple programming paradigms including object-oriented, functional, and procedural programming. Python has extensive libraries for web development, data science, machine learning, and automation. Popular frameworks include Django and Flask for web development, and pandas and numpy for data analysis.",
+    "filename": "python_guide.txt",
+    "chunk_id": 0,
+    "content_hash": "898535f08b68e7a7e31dafcfe30fc541",
+    "upload_timestamp": "2025-07-27T22:22:31.395110",
+    "chunk_length": 399
+  },
+  {
+    "id": "ai_basics.txt_0_79c03b47-4bf2-4e26-a4f4-ad381c2aee90",
+    "text": "Artificial Intelligence (AI) is the simulation of human intelligence in machines. Machine learning is a subset of AI that enables computers to learn without explicit programming. Deep learning uses neural networks with multiple layers to process complex data. Natural Language Processing (NLP) helps computers understand and generate human language.",
+    "filename": "ai_basics.txt",
+    "chunk_id": 0,
+    "content_hash": "c3d392d1ec005db3465b075efc0da5d7",
+    "upload_timestamp": "2025-07-27T22:22:33.436955",
+    "chunk_length": 349
+  },
+  {
+    "id": "web_tech.txt_0_41844bcd-bf24-47c3-9cc8-39e2d00f5f08",
+    "text": "Web development involves creating websites and web applications. Frontend technologies include HTML, CSS, and JavaScript for user interfaces. Backend technologies handle server-side logic, databases, and APIs. Modern frameworks like React, Vue.js, and Angular make frontend development more efficient.",
+    "filename": "web_tech.txt",
+    "chunk_id": 0,
+    "content_hash": "4a8b9c6011f52d04b850d695345ef27b",
+    "upload_timestamp": "2025-07-27T22:22:35.471487",
+    "chunk_length": 301
+  },
+  {
+    "id": "python_programming.txt_0_833f909b-12ef-45ca-9531-47e09e2060c5",
+    "text": "Python is a high-level, interpreted programming language created by Guido van Rossum. Python emphasizes code readability with its notable use of significant whitespace. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Popular Python frameworks include Django for web development and pandas for data analysis. Python is widely used in artificial intelligence, machine learning, web development, and scientific computing.",
+    "filename": "python_programming.txt",
+    "chunk_id": 0,
+    "content_hash": "215a8fe2f943831f7e2093f88b6947b6",
+    "upload_timestamp": "2025-07-27T22:28:42.798871",
+    "chunk_length": 484
+  },
+  {
+    "id": "machine_learning_basics.txt_0_32fef3e6-132e-4838-8d3d-f2b5efd2278e",
+    "text": "Machine learning is a method of data analysis that automates analytical model building. It is a branch of artificial intelligence based on the idea that systems can learn from data. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled training data to learn a mapping function from inputs to outputs. Unsupervised learning finds hidden patterns in data without labeled examples. Reinforcement learning learns optimal actions through trial and error interactions with an environment.",
+    "filename": "machine_learning_basics.txt",
+    "chunk_id": 0,
+    "content_hash": "bf84a53297486884c89ae33b06e039fc",
+    "upload_timestamp": "2025-07-27T22:28:44.840973",
+    "chunk_length": 582
+  },
+  {
+    "id": "web_development_guide.txt_0_aa10abb6-c716-4f09-a611-8922a5ef08ad",
+    "text": "Web development is the work involved in developing websites for the Internet or an intranet. Frontend development deals with the user interface and user experience using HTML, CSS, and JavaScript. Backend development focuses on server-side logic, databases, and application architecture. Popular frontend frameworks include React, Vue.js, and Angular for building interactive user interfaces. Backend technologies include Node.js, Python Django, Ruby on Rails, and PHP Laravel. Modern web development often uses REST APIs and GraphQL for data communication.",
+    "filename": "web_development_guide.txt",
+    "chunk_id": 0,
+    "content_hash": "a3bb456f1d93252d6e752a04af0c476d",
+    "upload_timestamp": "2025-07-27T22:28:46.868487",
+    "chunk_length": 557
+  },
+  {
+    "id": "ajay is pokemon.txt_0_97ce247c-35b0-47b3-ae0b-0257ce6908e7",
+    "text": "ajay is pokemon pikachu is vijay",
+    "filename": "ajay is pokemon.txt",
+    "chunk_id": 0,
+    "content_hash": "be5cef727f22fb81163611f79591f830",
+    "upload_timestamp": "2025-07-27T22:57:36.021774",
+    "chunk_length": 32
+  },
+  {
+    "id": "python_complete.txt_0_2f138232-3b7b-4ba3-885e-cdbe77a445b2",
+    "text": "Python is a high-level, interpreted programming language created by Guido van Rossum in 1991. Python emphasizes code readability with its notable use of significant whitespace. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Popular Python frameworks include Django and Flask for web development, pandas and numpy for data analysis. Python is widely used in artificial intelligence, machine learning, web development, and scientific computing. Python's philosophy emphasizes code readability and a syntax that allows programmers to express concepts in fewer lines of code.",
+    "filename": "python_complete.txt",
+    "chunk_id": 0,
+    "content_hash": "57f01597c59b7f217582d90cdf6ff56d",
+    "upload_timestamp": "2025-07-28T00:21:31.652797",
+    "chunk_length": 638
+  },
+  {
+    "id": "ai_ml_complete.txt_0_4234b277-51e3-40e7-9592-091da40b4812",
+    "text": "Artificial Intelligence (AI) is the simulation of human intelligence processes by machines. Machine learning is a subset of AI that provides systems the ability to automatically learn and improve from experience. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled training data to learn a mapping function from inputs to outputs. Unsupervised learning finds hidden patterns or intrinsic structures in input data without labeled examples. Reinforcement learning learns optimal actions through trial and error interactions with a dynamic environment. Deep learning is a subset of machine learning that uses neural networks with multiple layers. Natural Language Processing (NLP) is a branch of AI that helps computers understand and interpret human language.",
+    "filename": "ai_ml_complete.txt",
+    "chunk_id": 0,
+    "content_hash": "5de35a8345c299ed2409b71675961e94",
+    "upload_timestamp": "2025-07-28T00:21:33.751714",
+    "chunk_length": 858
+  },
+  {
+    "id": "web_dev_complete.txt_0_1e00ab08-818f-419d-8a6f-9d5f8baf8ffd",
+    "text": "Web development is the process of building and maintaining websites and web applications. Frontend development focuses on the user interface and user experience using HTML, CSS, and JavaScript. Backend development handles server-side logic, databases, and application architecture. Popular frontend frameworks include React, Vue.js, and Angular for building interactive user interfaces. Backend technologies include Node.js, Python Django, Ruby on Rails, and PHP Laravel. Modern web development uses REST APIs and GraphQL for data communication between frontend and backend. Responsive web design ensures websites work well on all devices and screen sizes. Web security is crucial and includes practices like HTTPS, input validation, and authentication.",
+    "filename": "web_dev_complete.txt",
+    "chunk_id": 0,
+    "content_hash": "44160d78d955fd6182931ba38fe28ab3",
+    "upload_timestamp": "2025-07-28T00:21:35.838323",
+    "chunk_length": 753
   }
 ]

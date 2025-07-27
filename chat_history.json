@@ -572,5 +572,831 @@
     "sender": "assistant",
     "timestamp": "2025-07-27T16:26:14.204843",
     "id": "user-session-1_81"
+  },
+  {
+    "chat_id": "test-kb-1",
+    "message": "What is Python programming language?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:35:41.262396",
+    "id": "test-kb-1_82"
+  },
+  {
+    "chat_id": "test-kb-1",
+    "message": "Python is a high-level programming language known for its simplicity and readability. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Python has a large standard library and extensive third-party packages available through pip. Python is widely used in web development, data science, artificial intelligence, and automation.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:35:43.281543",
+    "id": "test-kb-1_83"
+  },
+  {
+    "chat_id": "test-kb-2",
+    "message": "What are the types of machine learning?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:35:51.155268",
+    "id": "test-kb-2_84"
+  },
+  {
+    "chat_id": "test-kb-2",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:35:53.196641",
+    "id": "test-kb-2_85"
+  },
+  {
+    "chat_id": "test-kb-3",
+    "message": "What is frontend development?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:36:00.924759",
+    "id": "test-kb-3_86"
+  },
+  {
+    "chat_id": "test-kb-3",
+    "message": "Python is a high-level programming language known for its simplicity and readability. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Python has a large standard library and extensive third-party packages available through pip. Python is widely used in web development, data science, artificial intelligence, and automation.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:36:02.952057",
+    "id": "test-kb-3_87"
+  },
+  {
+    "chat_id": "test-kb-4",
+    "message": "What tools are used in data science?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:36:10.930922",
+    "id": "test-kb-4_88"
+  },
+  {
+    "chat_id": "test-kb-4",
+    "message": "Python is a high-level programming language known for its simplicity and readability. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Python has a large standard library and extensive third-party packages available through pip. Python is widely used in web development, data science, artificial intelligence, and automation.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:36:12.964687",
+    "id": "test-kb-4_89"
+  },
+  {
+    "chat_id": "test-kb-5",
+    "message": "How does reinforcement learning work?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:36:20.789792",
+    "id": "test-kb-5_90"
+  },
+  {
+    "chat_id": "test-kb-5",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:36:22.830846",
+    "id": "test-kb-5_91"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "What is the current weather in New York?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:36:30.559211",
+    "id": "test-fallback_92"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:36:32.594156",
+    "id": "test-fallback_93"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "who is mandeep bhabhro",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:40:04.467046",
+    "id": "user-session-1_94"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Rameshbhai Bhabhor Gandhinagar, Gujarat, India +91-9313467816 Objective mandeep101009@gmail.com linkedin.com/in/mandeep-bhabhor-305a62334 github.com/Mandeep-Bhabhor Aspiring Laravel Developer with a passion for backend development. Seeking to apply strong web-development skills, problem-solving mindset, and project experience in a challenging role that makes real-world impact. Education Anand Agricultural University (AAU) B.Tech in Information Technology (CAIT) Technical Skills Oct. 2022\u2013 May 2026 Anand, Gujarat Languages: PHP, Python, C, JavaScript, HTML, CSS, SQL Frameworks: Laravel, Bootstrap, React, ASP.NET Core Tools: GitHub, FFmpeg, MySQL, Firebase, Postman, git, Octave, Matlab, XAMPP Databases: MySQL, SQL Server, Firestore, SQLite Concepts: REST APIs, HLS Streaming, OOPs, MVC, ORM, RDBMS Major Projects | 2024 Agrimart \u2014 Laravel, MySQL, Bootstrap\u2013 Built a full-stack e-commerce platform for agricultural products with role-based access.\u2013 Implemented product CRUD, order management, and audit trail for tracking user log.\u2013 Integrated form validation, authentication, and secure middleware-based route protection.\u2013 Designed responsive UI using Bootstrap and followed MVC architecture for clean code separation.\u2013 GitHub: github.com/Mandeep-Bhabhor/agrimart | 2025 V-Stream \u2014 Laravel, FFmpeg, HLS.js, MySQL\u2013 Developed a scalable video streaming platform supporting adaptive bitrate playback using HLS and HLS.js.\u2013 Automated multi-resolution video encoding (480 to 1080p) using FFmpeg and stored outputs in organized directories.\u2013 Integrated creator upload panel, viewer interface, and role-based access control.\u2013 Built HLS playlist generator, and dynamically served videos based on internet speed using HLS.js.\u2013 Followed modular Laravel structure and implemented clean routing.\u2013 GitHub: github.com/Mandeep-Bhabhor/v-stream Mini Projects | 2023 \u2217 Simple role-based login system with hashed passwords and session tracking. | 2025 Login System \u2014 PHP, MySQL LLaMA Chatbot \u2014 Laravel, LLaMA 3B, LaravelOllama \u2217 Connected Meta\u2019s LLaMA 3 3B model running locally with Laravel using a service layer (LaravelOllama), creating a basic AI chatbot prototype inspired by Vibe Coding tutorials. Extracurricular Table Tennis Player & Event Volunteer AAU, Anand \u2014 College and Government Initiatives \u2217 Represented CAIT in inter-college table tennis tournaments and cultural tech festivals. \u2217 Actively participated in Smart Gujarat Government Hackathon and Odoo Hackathon, gaining hands-on experience in team collaboration and real-world problem solving. \u2217 Volunteered in college workshops, and NSS activities; awarded NSS certificate for social contribution and discipline. Profile Summary Final year B.Tech CAIT student passionate about web development and backend engineering. Completed two full-stack Laravel projects including a video streaming system and e-commerce app. Skilled in Laravel, and Firebase. Looking forward to using tech to empower small and local farmers through smart digital solutions.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:40:06.514617",
+    "id": "user-session-1_95"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "what are technical skills of mandeep",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:40:38.741310",
+    "id": "user-session-1_96"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Rameshbhai Bhabhor Gandhinagar, Gujarat, India +91-9313467816 Objective mandeep101009@gmail.com linkedin.com/in/mandeep-bhabhor-305a62334 github.com/Mandeep-Bhabhor Aspiring Laravel Developer with a passion for backend development. Seeking to apply strong web-development skills, problem-solving mindset, and project experience in a challenging role that makes real-world impact. Education Anand Agricultural University (AAU) B.Tech in Information Technology (CAIT) Technical Skills Oct. 2022\u2013 May 2026 Anand, Gujarat Languages: PHP, Python, C, JavaScript, HTML, CSS, SQL Frameworks: Laravel, Bootstrap, React, ASP.NET Core Tools: GitHub, FFmpeg, MySQL, Firebase, Postman, git, Octave, Matlab, XAMPP Databases: MySQL, SQL Server, Firestore, SQLite Concepts: REST APIs, HLS Streaming, OOPs, MVC, ORM, RDBMS Major Projects | 2024 Agrimart \u2014 Laravel, MySQL, Bootstrap\u2013 Built a full-stack e-commerce platform for agricultural products with role-based access.\u2013 Implemented product CRUD, order management, and audit trail for tracking user log.\u2013 Integrated form validation, authentication, and secure middleware-based route protection.\u2013 Designed responsive UI using Bootstrap and followed MVC architecture for clean code separation.\u2013 GitHub: github.com/Mandeep-Bhabhor/agrimart | 2025 V-Stream \u2014 Laravel, FFmpeg, HLS.js, MySQL\u2013 Developed a scalable video streaming platform supporting adaptive bitrate playback using HLS and HLS.js.\u2013 Automated multi-resolution video encoding (480 to 1080p) using FFmpeg and stored outputs in organized directories.\u2013 Integrated creator upload panel, viewer interface, and role-based access control.\u2013 Built HLS playlist generator, and dynamically served videos based on internet speed using HLS.js.\u2013 Followed modular Laravel structure and implemented clean routing.\u2013 GitHub: github.com/Mandeep-Bhabhor/v-stream Mini Projects | 2023 \u2217 Simple role-based login system with hashed passwords and session tracking. | 2025 Login System \u2014 PHP, MySQL LLaMA Chatbot \u2014 Laravel, LLaMA 3B, LaravelOllama \u2217 Connected Meta\u2019s LLaMA 3 3B model running locally with Laravel using a service layer (LaravelOllama), creating a basic AI chatbot prototype inspired by Vibe Coding tutorials. Extracurricular Table Tennis Player & Event Volunteer AAU, Anand \u2014 College and Government Initiatives \u2217 Represented CAIT in inter-college table tennis tournaments and cultural tech festivals. \u2217 Actively participated in Smart Gujarat Government Hackathon and Odoo Hackathon, gaining hands-on experience in team collaboration and real-world problem solving. \u2217 Volunteered in college workshops, and NSS activities; awarded NSS certificate for social contribution and discipline. Profile Summary Final year B.Tech CAIT student passionate about web development and backend engineering. Completed two full-stack Laravel projects including a video streaming system and e-commerce app. Skilled in Laravel, and Firebase. Looking forward to using tech to empower small and local farmers through smart digital solutions.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:40:40.767213",
+    "id": "user-session-1_97"
+  },
+  {
+    "chat_id": "test-enhanced-1",
+    "message": "What is Python programming language?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:52:46.316072",
+    "id": "test-enhanced-1_98"
+  },
+  {
+    "chat_id": "test-enhanced-1",
+    "message": "Python is a high-level programming language known for its simplicity and readability. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Python has a large standard library and extensive third-party packages available through pip. Python is widely used in web development, data science, artificial intelligence, and automation.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:52:48.329957",
+    "id": "test-enhanced-1_99"
+  },
+  {
+    "chat_id": "test-enhanced-2",
+    "message": "What is machine learning?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:52:54.989027",
+    "id": "test-enhanced-2_100"
+  },
+  {
+    "chat_id": "test-enhanced-2",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:52:57.029824",
+    "id": "test-enhanced-2_101"
+  },
+  {
+    "chat_id": "test-enhanced-3",
+    "message": "What are frontend technologies?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:53:04.785819",
+    "id": "test-enhanced-3_102"
+  },
+  {
+    "chat_id": "test-enhanced-3",
+    "message": "Web development involves creating websites and web applications for the internet. Frontend development focuses on user interface and user experience using HTML, CSS, and JavaScript. Backend development handles server-side logic, databases, and API development. Full-stack developers work on both frontend and backend components. Modern web development uses frameworks like React, Vue.js, Django, and Flask.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:53:06.799894",
+    "id": "test-enhanced-3_103"
+  },
+  {
+    "chat_id": "test-enhanced-4",
+    "message": "How does deep learning work?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:53:13.471980",
+    "id": "test-enhanced-4_104"
+  },
+  {
+    "chat_id": "test-enhanced-4",
+    "message": "Artificial Intelligence (AI) is the simulation of human intelligence in machines. Machine learning is a subset of AI that enables computers to learn without explicit programming. Deep learning uses neural networks with multiple layers to process complex data. Natural Language Processing (NLP) helps computers understand and generate human language.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:53:15.506889",
+    "id": "test-enhanced-4_105"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "What is the capital of Japan?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:53:22.394289",
+    "id": "test-fallback_106"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "Artificial Intelligence (AI) is the simulation of human intelligence in machines. Machine learning is a subset of AI that enables computers to learn without explicit programming. Deep learning uses neural networks with multiple layers to process complex data. Natural Language Processing (NLP) helps computers understand and generate human language.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:53:24.429143",
+    "id": "test-fallback_107"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "Who is the current president of the United States?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:53:31.136498",
+    "id": "test-fallback_108"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "Artificial Intelligence (AI) is the simulation of human intelligence in machines. Machine learning is a subset of AI that enables computers to learn without explicit programming. Deep learning uses neural networks with multiple layers to process complex data. Natural Language Processing (NLP) helps computers understand and generate human language.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:53:33.157163",
+    "id": "test-fallback_109"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "What is the weather like today?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:53:40.892008",
+    "id": "test-fallback_110"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "Data science combines statistics, programming, and domain expertise to extract insights from data. The data science process includes data collection, cleaning, analysis, and visualization. Popular tools for data science include Python, R, SQL, and various libraries like pandas and numpy. Data scientists use machine learning algorithms to build predictive models. Data visualization helps communicate findings through charts, graphs, and dashboards.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:53:42.932907",
+    "id": "test-fallback_111"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "president of japan",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:54:49.951329",
+    "id": "user-session-1_112"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:54:51.983217",
+    "id": "user-session-1_113"
+  },
+  {
+    "chat_id": "test-integration-1",
+    "message": "Explain Python programming language",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:59:05.725883",
+    "id": "test-integration-1_114"
+  },
+  {
+    "chat_id": "test-integration-1",
+    "message": "Python is a high-level, interpreted programming language created by Guido van Rossum. Python emphasizes code readability with its notable use of significant whitespace. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Popular Python frameworks include Django for web development and pandas for data analysis. Python is widely used in artificial intelligence, machine learning, web development, and scientific computing.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:59:07.742088",
+    "id": "test-integration-1_115"
+  },
+  {
+    "chat_id": "test-integration-2",
+    "message": "What is supervised learning?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:59:15.482098",
+    "id": "test-integration-2_116"
+  },
+  {
+    "chat_id": "test-integration-2",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:59:17.502234",
+    "id": "test-integration-2_117"
+  },
+  {
+    "chat_id": "test-integration-3",
+    "message": "What is the capital of France?",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:59:29.132009",
+    "id": "test-integration-3_118"
+  },
+  {
+    "chat_id": "test-integration-3",
+    "message": "Title: What is the Capital of France? - WorldAtlas Snippet: Jun 29, 2018 \u00b7 Learn about Paris, the largest and most populous city in France, and its history, geography, economy, tourism, and administration. Find out why Paris is called the City of Light \u2026 Title: Paris | Definition, Map, Population, Facts, & History | Britannica Snippet: 3 days ago \u00b7 Paris, city and capital of France, located along the Seine River, in the north-central part of the country. Paris is one of the world\u2019s most impor...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:59:31.173180",
+    "id": "test-integration-3_119"
+  },
+  {
+    "chat_id": "test-integration-4",
+    "message": "Current weather in Tokyo",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:59:41.921795",
+    "id": "test-integration-4_120"
+  },
+  {
+    "chat_id": "test-integration-4",
+    "message": "I couldn't find relevant information for your query.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:59:43.950414",
+    "id": "test-integration-4_121"
+  },
+  {
+    "chat_id": "test-enhanced-1",
+    "message": "What is Python programming language?",
+    "sender": "user",
+    "timestamp": "2025-07-27T17:19:10.194819",
+    "id": "test-enhanced-1_122"
+  },
+  {
+    "chat_id": "test-enhanced-1",
+    "message": "Python is a high-level, interpreted programming language created by Guido van Rossum. Python emphasizes code readability with its notable use of significant whitespace. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Popular Python frameworks include Django for web development and pandas for data analysis. Python is widely used in artificial intelligence, machine learning, web development, and scientific computing.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T17:19:12.248420",
+    "id": "test-enhanced-1_123"
+  },
+  {
+    "chat_id": "test-enhanced-2",
+    "message": "What is machine learning?",
+    "sender": "user",
+    "timestamp": "2025-07-27T17:19:18.948815",
+    "id": "test-enhanced-2_124"
+  },
+  {
+    "chat_id": "test-enhanced-2",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T17:19:21.018894",
+    "id": "test-enhanced-2_125"
+  },
+  {
+    "chat_id": "test-enhanced-3",
+    "message": "What are frontend technologies?",
+    "sender": "user",
+    "timestamp": "2025-07-27T17:19:32.168802",
+    "id": "test-enhanced-3_126"
+  },
+  {
+    "chat_id": "test-enhanced-3",
+    "message": "Title: 24 Top Frontend Technologies to Use in 2025 - Netguru Snippet: Title: Top 20 Frontend Technologies with Features (2025 List) Snippet: May 15, 2024 \u00b7 The following frontend web technology list comprises a mix of established, trending, and emerging technologies. These technologies are commonly used to design user interfaces \u2026 Title: Top 10 Technologies Used for Frontend Development - Intellipaat Snippet: Jul 19, 2025 \u00b7 Frontend development means creating user interfaces for end users (wh...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T17:19:34.221269",
+    "id": "test-enhanced-3_127"
+  },
+  {
+    "chat_id": "test-enhanced-4",
+    "message": "How does deep learning work?",
+    "sender": "user",
+    "timestamp": "2025-07-27T17:19:43.597434",
+    "id": "test-enhanced-4_128"
+  },
+  {
+    "chat_id": "test-enhanced-4",
+    "message": "Title: do\u548cdoes\u7684\u533a\u522b\u548c\u7528\u6cd5 - \u767e\u5ea6\u77e5\u9053 Snippet: do\u548cdoes\u7684\u533a\u522b\u548c\u7528\u6cd5\u533a\u522b\u662f\uff1ado \u662f\u52a8\u8bcd\u539f\u5f62\uff0c\u7528\u4e8e\u7b2c\u4e00\u4eba\u79f0\u3001\u7b2c\u4e09\u4eba\u79f0\u7684\u590d\u6570 (I/you/we/they)\u3002does \u7528\u4e8e\u7b2c\u4e09\u4eba\u79f0\u5355\u6570 (he/she/it) does \u7528\u4e8e\u7b2c\u4e09\u4eba\u79f0\u5355\u6570\u3002do\u7528\u4e8e\u4e00\u822c\u73b0\u5728\u65f6\u4e14\u4e3b\u8bed\u662f\u590d\u6570we,they, Title: \u4ec0\u4e48\u65f6\u5019\u7528does\uff0c\u4ec0\u4e48\u65f6\u5019\u7528do\uff1f_\u767e\u5ea6\u77e5\u9053 Snippet: \u4ec0\u4e48\u65f6\u5019\u7528does\uff0c\u4ec0\u4e48\u65f6\u5019\u7528do\uff1f\u4e00\u822c\u73b0\u5728\u65f6\u7528do\u548cdoes,\u6bd4\u5982always,usually,often\u3001every day\uff08year\uff09\u3002\u7b2c\u4e00\u4eba\u79f0\u3001\u7b2c\u4e8c\u4eba\u79f0\u548c\u540d\u8bcd\u590d\u6570\u7528do\uff08I\u3001you\u3001we\u3001they\u3001cats\u3001dogs\u3001~s\u7b49\uff09\u3002 \u2026 Title: do does did \u5206\u522b\u5728\u4ec0\u4e48\u65f6\u5019\u7528.\u6709\u4ec0\u4e48\u533a\u522b - \u767e\u5ea6\u77e5\u9053 Snippet: Nov 13, 2015 \u00b7 do does did \u5206\u522b\u5728\u4ec0\u4e48\u65f6\u5019\u7528.\u6709\u4ec0\u4e48\u533a\u522b1\u3001do,does\u548cdid\u90fd\u662f\u52a9\u52a8\u8bcd\uff0cdo\u548cdoes\u4e00\u822c\u7528\u4e8e\u73b0\u5728\u65f6\u30022\u3001do\u662f\u539f\u5f62\u7528\u4e8e\u7b2c\u4e00\u4eba\u79f0\u6216\u7b2c\u4e8c\u4eba\u79f0\uff0c\u8868\u793a\u4e00\u822c\u52a8\u4f5c\u6216\u662f\u4e60\u60ef\u6027\u52a8\u4f5c\u30023\u3001does\u5219 \u2026",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T17:19:45.665507",
+    "id": "test-enhanced-4_129"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "What is the capital of Japan?",
+    "sender": "user",
+    "timestamp": "2025-07-27T17:19:57.047387",
+    "id": "test-fallback_130"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "I couldn't find relevant information for your query.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T17:19:59.086728",
+    "id": "test-fallback_131"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "Who is the current president of the United States?",
+    "sender": "user",
+    "timestamp": "2025-07-27T17:20:10.094963",
+    "id": "test-fallback_132"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "Title: current\uff0cpresent\uff0crecent\u4e09\u4e2a\u8bcd\u6709\u4ec0\u4e48\u533a\u522b - \u767e\u5ea6\u77e5\u9053 Snippet: current\u3001present\u3001recent\u4e09\u4e2a\u8bcd\u7684\u533a\u522b\uff1a\u610f\u601d\u4e0d\u540c\u3001\u7528\u6cd5\u4e0d\u540c\u3001\u4fa7\u91cd\u70b9\u4e0d\u540c \u4e00\u3001\u610f\u601d\u4e0d\u540c 1.current\u610f\u601d\uff1aadj. \u73b0\u5728\u7684\uff1b\u6d41\u901a\u7684 2.present\u610f\u601d\uff1aadj. \u73b0\u5728\u7684\uff1b\u5f53\u524d\u7684\uff1b\u5b58\u5728\u7684 3.recent\u610f\u601d\uff1aadj. \u8fd1\u6765 \u2026 Title: Current News - Tracking the transition to a decarbonised, digitised \u2026 Snippet: January 16, 2025 The St Helena government tested the feasibility, reliability and adaptability of electric vehicle use on one of the most remote inhabited islands on the planet. January 16, 2025 \u2026 Title: The 2025 EV Infrastructure...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T17:20:12.166019",
+    "id": "test-fallback_133"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "What is the weather like today?",
+    "sender": "user",
+    "timestamp": "2025-07-27T17:20:22.813154",
+    "id": "test-fallback_134"
+  },
+  {
+    "chat_id": "test-fallback",
+    "message": "Title: 10-day weather forecast for Himayatnagar, Telangana - The Weather \u2026 Snippet: Be prepared with the most accurate 10-day forecast for Himayatnagar, Telangana with highs, lows, chance of precipitation from The Weather Channel and Weather.com Title: Himayatnagar, Telangana, India Weather Forecast | AccuWeather Snippet: Himayatnagar, Telangana, India Weather Forecast, with current conditions, wind, air quality, and what to expect for the next 3 days. Title: Himayatnagar, Telangana Weather F...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T17:20:24.867828",
+    "id": "test-fallback_135"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "who is mandeep",
+    "sender": "user",
+    "timestamp": "2025-07-27T17:26:51.348845",
+    "id": "user-session-1_136"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Rameshbhai Bhabhor Gandhinagar, Gujarat, India +91-9313467816 Objective mandeep101009@gmail.com linkedin.com/in/mandeep-bhabhor-305a62334 github.com/Mandeep-Bhabhor Aspiring Laravel Developer with a passion for backend development. Seeking to apply strong web-development skills, problem-solving mindset, and project experience in a challenging role that makes real-world impact. Education Anand Agricultural University (AAU) B.Tech in Information Technology (CAIT) Technical Skills Oct. 2022\u2013 May 2026 Anand, Gujarat Languages: PHP, Python, C, JavaScript, HTML, CSS, SQL Frameworks: Laravel, Bootstrap, React, ASP.NET Core Tools: GitHub, FFmpeg, MySQL, Firebase, Postman, git, Octave, Matlab, XAMPP Databases: MySQL, SQL Server, Firestore, SQLite Concepts: REST APIs, HLS Streaming, OOPs, MVC, ORM, RDBMS Major Projects | 2024 Agrimart \u2014 Laravel, MySQL, Bootstrap\u2013 Built a full-stack e-commerce platform for agricultural products with role-based access.\u2013 Implemented product CRUD, order management, and audit trail for tracking user log.\u2013 Integrated form validation, authentication, and secure middleware-based route protection.\u2013 Designed responsive UI using Bootstrap and followed MVC architecture for clean code separation.\u2013 GitHub: github.com/Mandeep-Bhabhor/agrimart | 2025 V-Stream \u2014 Laravel, FFmpeg, HLS.js, MySQL\u2013 Developed a scalable video streaming platform supporting adaptive bitrate playback using HLS and HLS.js.\u2013 Automated multi-resolution video encoding (480 to 1080p) using FFmpeg and stored outputs in organized directories.\u2013 Integrated creator upload panel, viewer interface, and role-based access control.\u2013 Built HLS playlist generator, and dynamically served videos based on internet speed using HLS.js.\u2013 Followed modular Laravel structure and implemented clean routing.\u2013 GitHub: github.com/Mandeep-Bhabhor/v-stream Mini Projects | 2023 \u2217 Simple role-based login system with hashed passwords and session tracking. | 2025 Login System \u2014 PHP, MySQL LLaMA Chatbot \u2014 Laravel, LLaMA 3B, LaravelOllama \u2217 Connected Meta\u2019s LLaMA 3 3B model running locally with Laravel using a service layer (LaravelOllama), creating a basic AI chatbot prototype inspired by Vibe Coding tutorials. Extracurricular Table Tennis Player & Event Volunteer AAU, Anand \u2014 College and Government Initiatives \u2217 Represented CAIT in inter-college table tennis tournaments and cultural tech festivals. \u2217 Actively participated in Smart Gujarat Government Hackathon and Odoo Hackathon, gaining hands-on experience in team collaboration and real-world problem solving. \u2217 Volunteered in college workshops, and NSS activities; awarded NSS certificate for social contribution and discipline. Profile Summary Final year B.Tech CAIT student passionate about web development and backend engineering. Completed two full-stack Laravel projects including a video streaming system and e-commerce app. Skilled in Laravel, and Firebase. Looking forward to using tech to empower small and local farmers through smart digital solutions.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T17:26:53.385554",
+    "id": "user-session-1_137"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "who is ajay",
+    "sender": "user",
+    "timestamp": "2025-07-27T17:27:52.240535",
+    "id": "user-session-1_138"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "ajay is pokemon pikachu is vijay",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T17:27:54.278495",
+    "id": "user-session-1_139"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "hi",
+    "sender": "user",
+    "timestamp": "2025-07-27T18:41:06.488675",
+    "id": "user-session-1_140"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Hi! The document describes machine learning, a type of artificial intelligence where computers learn without being explicitly programmed. It focuses on three main types: supervised, unsupervised, and reinforcement learning, each using different methods to learn from data.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T18:41:08.530162",
+    "id": "user-session-1_141"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "what dicuments are there",
+    "sender": "user",
+    "timestamp": "2025-07-27T18:41:52.090067",
+    "id": "user-session-1_142"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text doesn't mention any specific documents. It describes machine learning and its three main types: supervised, unsupervised, and reinforcement learning. There is no list or reference to any documents within the text.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T18:41:54.142330",
+    "id": "user-session-1_143"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "what about mandeep",
+    "sender": "user",
+    "timestamp": "2025-07-27T18:42:09.658395",
+    "id": "user-session-1_144"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Rameshbhai Bhabhor Gandhinagar, Gujarat, India +91-9313467816 Objective mandeep101009@gmail.com linkedin.com/in/mandeep-bhabhor-305a62334 github.com/Mandeep-Bhabhor Aspiring Laravel Developer with a passion for backend development. Seeking to apply strong web-development skills, problem-solving mindset, and project experience in a challenging role that makes real-world impact. Education Anand Agricultural University (AAU) B.Tech in Information Technology (CAIT) Technical Skills Oct. 2022\u2013 May 2026 Anand, Gujarat Languages: PHP, Python, C, JavaScript, HTML, CSS, SQL Frameworks: Laravel, Bootstrap, React, ASP.NET Core Tools: GitHub, FFmpeg, MySQL, Firebase, Postman, git, Octave, Matlab, XAMPP Databases: MySQL, SQL Server, Firestore, SQLite Concepts: REST APIs, HLS Streaming, OOPs, MVC, ORM, RDBMS Major Projects | 2024 Agrimart \u2014 Laravel, MySQL, Bootstrap\u2013 Built a full-stack e-commerce platform for agricultural products with role-based access.\u2013 Implemented product CRUD, order management, and audit trail for tracking user log.\u2013 Integrated form validation, authentication, and secure middleware-based route protection.\u2013 Designed responsive UI using Bootstrap and followed MVC architecture for clean code separation.\u2013 GitHub: github.com/Mandeep-Bhabhor/agrimart | 2025 V-Stream \u2014 Laravel, FFmpeg, HLS.js, MySQL\u2013 Developed a scalable video streaming platform supporting adaptive bitrate playback using HLS and HLS.js.\u2013 Automated multi-resolution video encoding (480 to 1080p) using FFmpeg and stored outputs in organized directories.\u2013 Integrated creator upload panel, viewer interface, and role-based access control.\u2013 Built HLS playlist generator, and dynamically served videos based on internet speed using HLS.js.\u2013 Followed modular Laravel structure and implemented clean routing.\u2013 GitHub: github.com/Mandeep-Bhabhor/v-stream Mini Projects | 2023 \u2217 Simple role-based login system with hashed passwords and session tracking. | 2025 Login System \u2014 PHP, MySQL LLaMA Chatbot \u2014 Laravel, LLaMA 3B, LaravelOllama \u2217 Connected Meta\u2019s LLaMA 3 3B model running locally with Laravel using a service layer (LaravelOllama), creating a basic AI chatbot prototype inspired by Vibe Coding tutorials. Extracurricular Table Tennis Player & Event Volunteer AAU, Anand \u2014 College and Government Initiatives \u2217 Represented CAIT in inter-college table tennis tournaments and cultural tech festivals. \u2217 Actively participated in Smart Gujarat Government Hackathon and Odoo Hackathon, gaining hands-on experience in team collaboration and real-world problem solving. \u2217 Volunteered in college workshops, and NSS activities; awarded NSS certificate for social contribution and discipline. Profile Summary Final year B.Tech CAIT student passionate about web development and backend engineering. Completed two full-stack Laravel projects including a video streaming system and e-commerce app. Skilled in Laravel, and Firebase. Looking forward to using tech to empower small and local farmers through smart digital solutions.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T18:42:11.715458",
+    "id": "user-session-1_145"
+  },
+  {
+    "chat_id": "test-kb-1",
+    "message": "What is Python programming language?",
+    "sender": "user",
+    "timestamp": "2025-07-27T18:51:47.302545",
+    "id": "test-kb-1_146"
+  },
+  {
+    "chat_id": "test-kb-1",
+    "message": "Python is a high-level programming language created by Guido van Rossum, known for its readable code and use of whitespace. It supports various programming styles and is used extensively in fields like artificial intelligence, web development, and data analysis. Popular frameworks include Django and pandas.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T18:51:49.342594",
+    "id": "test-kb-1_147"
+  },
+  {
+    "chat_id": "test-kb-2",
+    "message": "Explain machine learning types",
+    "sender": "user",
+    "timestamp": "2025-07-27T18:51:57.169140",
+    "id": "test-kb-2_148"
+  },
+  {
+    "chat_id": "test-kb-2",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T18:51:59.226404",
+    "id": "test-kb-2_149"
+  },
+  {
+    "chat_id": "test-kb-3",
+    "message": "What is frontend development?",
+    "sender": "user",
+    "timestamp": "2025-07-27T18:54:47.803559",
+    "id": "test-kb-3_150"
+  },
+  {
+    "chat_id": "test-kb-3",
+    "message": "Web development is the work involved in developing websites for the Internet or an intranet. Frontend development deals with the user interface and user experience using HTML, CSS, and JavaScript. Backend development focuses on server-side logic, databases, and application architecture. Popular frontend frameworks include React, Vue.js, and Angular for building interactive user interfaces. Backend technologies include Node.js, Python Django, Ruby on Rails, and PHP Laravel. Modern web development often uses REST APIs and GraphQL for data communication.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T18:54:49.853144",
+    "id": "test-kb-3_151"
+  },
+  {
+    "chat_id": "test-search-2",
+    "message": "Who is the current president of the United States?",
+    "sender": "user",
+    "timestamp": "2025-07-27T18:54:58.806532",
+    "id": "test-search-2_152"
+  },
+  {
+    "chat_id": "test-search-2",
+    "message": "I couldn't find relevant information for your query.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T18:55:00.871262",
+    "id": "test-search-2_153"
+  },
+  {
+    "chat_id": "test-kb-4",
+    "message": "What is deep learning?",
+    "sender": "user",
+    "timestamp": "2025-07-27T18:55:06.611600",
+    "id": "test-kb-4_154"
+  },
+  {
+    "chat_id": "test-kb-4",
+    "message": "Artificial Intelligence (AI) is the simulation of human intelligence in machines. Machine learning is a subset of AI that enables computers to learn without explicit programming. Deep learning uses neural networks with multiple layers to process complex data. Natural Language Processing (NLP) helps computers understand and generate human language.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T18:55:08.668637",
+    "id": "test-kb-4_155"
+  },
+  {
+    "chat_id": "test-search-3",
+    "message": "What is the weather today?",
+    "sender": "user",
+    "timestamp": "2025-07-27T18:55:17.229368",
+    "id": "test-search-3_156"
+  },
+  {
+    "chat_id": "test-search-3",
+    "message": "Title: Anand, Gujarat, India Weather Forecast | AccuWeather Snippet: Anand, Gujarat, India Weather Forecast, with current conditions, wind, air quality, and what to expect for the next 3 days. Title: Anand, Gujarat, India 14 day weather forecast - timeanddate\u2026 Snippet: Jul 20, 2025 \u00b7 2 Week Extended Forecast in Anand, Gujarat, India ... Hour-by-hour weather for Anand next 7 days Title: Today's Weather in Anand - Hourly Forecast and Conditions Snippet: Get the latest hourly weather updates for...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T18:55:19.273802",
+    "id": "test-search-3_157"
+  },
+  {
+    "chat_id": "test-search-1",
+    "message": "What is the capital of France?",
+    "sender": "user",
+    "timestamp": "2025-07-27T18:55:27.381991",
+    "id": "test-search-1_158"
+  },
+  {
+    "chat_id": "test-search-1",
+    "message": "Title: Is Paris the capital of Italy? - Answers Snippet: Oct 18, 2022 \u00b7 NO. Paris is in France, and is the capital there. The capital of Italy is Rome. Title: What country owns the island Corsica? - Answers Snippet: Sep 15, 2023 \u00b7 What is the name of the capital of the country that owns Corsica? Paris. Corsica is a French island south-east of Nice. The capital of France is Paris, so this is the \u2026 Title: French Fashion | History, Clothing & Designers - Study.com Snippet: Nov 21, 2023 \u00b7 Learn a...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T18:55:29.435939",
+    "id": "test-search-1_159"
+  },
+  {
+    "chat_id": "verify-test",
+    "message": "What is Python?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:10:12.456967",
+    "id": "verify-test_160"
+  },
+  {
+    "chat_id": "verify-test",
+    "message": "Title: What is Python? Its Uses and Applications - GeeksforGeeks Snippet: 4 days ago \u00b7 Python is one of the easiest yet most useful programming languages and is widely used in the software industry. People \u2026 Title: Introduction to Python - W3Schools Snippet: Python can be used on a server to create web applications. Python can be used alongside software to create workflows. Python can \u2026 Title: Python (programming language) - Wikipedia Snippet: Python is a high-level, general-purpose programmi...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:10:14.512476",
+    "id": "verify-test_161"
+  },
+  {
+    "chat_id": "test-integration-1",
+    "message": "Explain Python programming language",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:13:10.654736",
+    "id": "test-integration-1_162"
+  },
+  {
+    "chat_id": "test-integration-1",
+    "message": "Python is a high-level, interpreted programming language created by Guido van Rossum. Python emphasizes code readability with its notable use of significant whitespace. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Popular Python frameworks include Django for web development and pandas for data analysis. Python is widely used in artificial intelligence, machine learning, web development, and scientific computing.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:13:12.696689",
+    "id": "test-integration-1_163"
+  },
+  {
+    "chat_id": "test-integration-2",
+    "message": "What is supervised learning?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:13:19.387711",
+    "id": "test-integration-2_164"
+  },
+  {
+    "chat_id": "test-integration-2",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:13:21.457551",
+    "id": "test-integration-2_165"
+  },
+  {
+    "chat_id": "test-integration-3",
+    "message": "What is the capital of France?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:13:35.393469",
+    "id": "test-integration-3_166"
+  },
+  {
+    "chat_id": "test-integration-3",
+    "message": "Title: Paris, Capital city of France - The World Countries Snippet: 4 days ago \u00b7 Paris is the capital of France (French Republic), situated in the Western Europe subregion of Europe. In Paris, the currency used is Euro (\u20ac), which is the official currency used in \u2026 Title: Facts About France | Map, Population & Capital - Study.com Snippet: Learn facts about France and see where France is located with a map. Explore the France population, the culture, geography of France, and other relevant facts.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:13:37.432573",
+    "id": "test-integration-3_167"
+  },
+  {
+    "chat_id": "test-integration-4",
+    "message": "Current weather in Tokyo",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:13:47.732529",
+    "id": "test-integration-4_168"
+  },
+  {
+    "chat_id": "test-integration-4",
+    "message": "Title: Current News - Tracking the transition to a decarbonised, digitised \u2026 Snippet: January 16, 2025 The St Helena government tested the feasibility, reliability and adaptability of electric vehicle use on one of the most remote inhabited islands on the planet. January 16, 2025 \u2026 Title: current\uff0cpresent\uff0crecent\u4e09\u4e2a\u8bcd\u6709\u4ec0\u4e48\u533a\u522b - \u767e\u5ea6\u77e5\u9053 Snippet: current\u3001present\u3001recent\u4e09\u4e2a\u8bcd\u7684\u533a\u522b\uff1a\u610f\u601d\u4e0d\u540c\u3001\u7528\u6cd5\u4e0d\u540c\u3001\u4fa7\u91cd\u70b9\u4e0d\u540c \u4e00\u3001\u610f\u601d\u4e0d\u540c 1.current\u610f\u601d\uff1aadj. \u73b0\u5728\u7684\uff1b\u6d41\u901a\u7684 2.present\u610f\u601d\uff1aadj. \u73b0\u5728\u7684\uff1b\u5f53\u524d\u7684\uff1b\u5b58\u5728\u7684 3.recent\u610f\u601d\uff1aadj. \u8fd1\u6765 \u2026 Title: \u8bf7\u95ee\u4e3a\u4ec0\u4e48\u7535\u538b\u7684\u82f1\u6587\u662fvoltage,\u7f29\u5199\u5374\u662fu\uff0c\u800c...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:13:49.760756",
+    "id": "test-integration-4_169"
+  },
+  {
+    "chat_id": "test-123",
+    "message": "What is Python programming language?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:14:40.308311",
+    "id": "test-123_170"
+  },
+  {
+    "chat_id": "test-123",
+    "message": "Python is a high-level, interpreted programming language created by Guido van Rossum. Python emphasizes code readability with its notable use of significant whitespace. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Popular Python frameworks include Django for web development and pandas for data analysis. Python is widely used in artificial intelligence, machine learning, web development, and scientific computing.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:14:42.347111",
+    "id": "test-123_171"
+  },
+  {
+    "chat_id": "test-123",
+    "message": "What is the capital of France?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:14:54.236248",
+    "id": "test-123_172"
+  },
+  {
+    "chat_id": "test-123",
+    "message": "Title: Paris, Capital city of France - The World Countries Snippet: 4 days ago \u00b7 Paris is the capital of France (French Republic), situated in the Western Europe subregion of Europe. In Paris, the currency used is Euro (\u20ac), which is the official currency used \u2026 Title: Is Paris the capital of Italy? - Answers Snippet: Oct 18, 2022 \u00b7 NO. Paris is in France, and is the capital there. The capital of Italy is Rome. Title: What country owns the island Corsica? - Answers Snippet: Sep 15, 2023 \u00b7 What...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:14:56.276432",
+    "id": "test-123_173"
+  },
+  {
+    "chat_id": "history-test-1753644389",
+    "message": "Hello, I'm starting a new conversation",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:26:40.414929",
+    "id": "history-test-1753644389_174"
+  },
+  {
+    "chat_id": "history-test-1753644389",
+    "message": "Title: How to Start a Conversation (Without Being Awkward) - SocialSelf Snippet: Title: 15 Examples: How to Start a Conversation (Exactly What to Say) Snippet: The key to starting a good conversation is to be genuine and show interest in the other person. \u2026 Title: 50 Ways to Start a Conversation with Anyone - loveyouenglish.com Snippet: Aug 11, 2024 \u00b7 Whether you\u2019re meeting someone new at a party, at work, or in a casual setting, \u2026",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:26:42.449601",
+    "id": "history-test-1753644389_175"
+  },
+  {
+    "chat_id": "history-test-1753644389",
+    "message": "What is Python programming language?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:26:50.340258",
+    "id": "history-test-1753644389_176"
+  },
+  {
+    "chat_id": "history-test-1753644389",
+    "message": "Python is a high-level, interpreted programming language created by Guido van Rossum. Python emphasizes code readability with its notable use of significant whitespace. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Popular Python frameworks include Django for web development and pandas for data analysis. Python is widely used in artificial intelligence, machine learning, web development, and scientific computing.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:26:52.407753",
+    "id": "history-test-1753644389_177"
+  },
+  {
+    "chat_id": "history-test-1753644389",
+    "message": "Can you tell me more about its features?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:27:02.868006",
+    "id": "history-test-1753644389_178"
+  },
+  {
+    "chat_id": "history-test-1753644389",
+    "message": "Title: Canva: Visual Suite for Everyone Snippet: Canva is a free-to-use online graphic design tool. Use it to create social media posts, presentations, posters, videos, logos and more. Title: CAN | English meaning - Cambridge Dictionary Snippet: Can is usually used in standard spoken English when asking for permission. It is acceptable in most forms of written English, although in very formal writing, such as official instructions, may is often \u2026 Title: CAN Definition & Meaning - Merriam-Webs...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:27:04.908309",
+    "id": "history-test-1753644389_179"
+  },
+  {
+    "chat_id": "history-test-1753644389",
+    "message": "What about machine learning in Python?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:27:11.654851",
+    "id": "history-test-1753644389_180"
+  },
+  {
+    "chat_id": "history-test-1753644389",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:27:13.725640",
+    "id": "history-test-1753644389_181"
+  },
+  {
+    "chat_id": "python-learning-session",
+    "message": "What is Python programming?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:36:15.268653",
+    "id": "python-learning-session_182"
+  },
+  {
+    "chat_id": "python-learning-session",
+    "message": "Python is a high-level programming language known for its simplicity and readability. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Python has a large standard library and extensive third-party packages available through pip. Python is widely used in web development, data science, artificial intelligence, and automation.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:36:17.309018",
+    "id": "python-learning-session_183"
+  },
+  {
+    "chat_id": "python-learning-session",
+    "message": "How do I install Python?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:36:28.504923",
+    "id": "python-learning-session_184"
+  },
+  {
+    "chat_id": "python-learning-session",
+    "message": "Title: How to install Python on Windows? - GeeksforGeeks Snippet: Jul 12, 2025 \u00b7 The process of How to install Python in Windows, operating system is relatively easy and involves a few \u2026 Title: How to Install Python on Your System: A Guide \u2013 Real Python Snippet: Jan 19, 2025 \u00b7 The first step to getting started with Python is to install it on your machine. In this tutorial, you'll learn how \u2026 Title: Python 3 Installation and Setup Guide Snippet:",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:36:30.566880",
+    "id": "python-learning-session_185"
+  },
+  {
+    "chat_id": "python-learning-session",
+    "message": "What are Python data types?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:36:38.628129",
+    "id": "python-learning-session_186"
+  },
+  {
+    "chat_id": "python-learning-session",
+    "message": "Python is a high-level programming language known for its simplicity and readability. Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Python has a large standard library and extensive third-party packages available through pip. Python is widely used in web development, data science, artificial intelligence, and automation.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:36:40.680912",
+    "id": "python-learning-session_187"
+  },
+  {
+    "chat_id": "ml-discussion-session",
+    "message": "What is machine learning?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:36:48.720759",
+    "id": "ml-discussion-session_188"
+  },
+  {
+    "chat_id": "ml-discussion-session",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:36:50.792758",
+    "id": "ml-discussion-session_189"
+  },
+  {
+    "chat_id": "ml-discussion-session",
+    "message": "Explain supervised learning",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:36:59.385635",
+    "id": "ml-discussion-session_190"
+  },
+  {
+    "chat_id": "ml-discussion-session",
+    "message": "Machine learning is a subset of artificial intelligence that enables computers to learn without explicit programming. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled data to train models for prediction tasks. Unsupervised learning finds patterns in data without labeled examples. Reinforcement learning learns through interaction with an environment using rewards and penalties.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:37:01.456264",
+    "id": "ml-discussion-session_191"
+  },
+  {
+    "chat_id": "ml-discussion-session",
+    "message": "What are neural networks?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:37:09.501258",
+    "id": "ml-discussion-session_192"
+  },
+  {
+    "chat_id": "ml-discussion-session",
+    "message": "Artificial Intelligence (AI) is the simulation of human intelligence processes by machines. Machine learning is a subset of AI that provides systems the ability to automatically learn and improve from experience. There are three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Supervised learning uses labeled training data to learn a mapping function from inputs to outputs. Unsupervised learning finds hidden patterns or intrinsic structures in input data without labeled examples. Reinforcement learning learns optimal actions through trial and error interactions with a dynamic environment. Deep learning is a subset of machine learning that uses neural networks with multiple layers. Natural Language Processing (NLP) is a branch of AI that helps computers understand and interpret human language.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:37:11.542939",
+    "id": "ml-discussion-session_193"
+  },
+  {
+    "chat_id": "web-dev-session",
+    "message": "What is frontend development?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:37:21.183494",
+    "id": "web-dev-session_194"
+  },
+  {
+    "chat_id": "web-dev-session",
+    "message": "Web development is the work involved in developing websites for the Internet or an intranet. Frontend development deals with the user interface and user experience using HTML, CSS, and JavaScript. Backend development focuses on server-side logic, databases, and application architecture. Popular frontend frameworks include React, Vue.js, and Angular for building interactive user interfaces. Backend technologies include Node.js, Python Django, Ruby on Rails, and PHP Laravel. Modern web development often uses REST APIs and GraphQL for data communication.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:37:23.225821",
+    "id": "web-dev-session_195"
+  },
+  {
+    "chat_id": "web-dev-session",
+    "message": "How does HTML work?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:37:36.109759",
+    "id": "web-dev-session_196"
+  },
+  {
+    "chat_id": "web-dev-session",
+    "message": "Title: HTML Tutorial - W3Schools Snippet: Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, Python, PHP, Bootstrap, Java, XML and more.The purpose of a web browser (Chrome, \u2026HTML Examples In this HTML tutorial, \u2026HTML CSS - HTML Tutorial - W3SchoolsPython - HTML Tutorial - W3SchoolsLearn the basics of HTML with examples \u2026Java - HTML Tutorial - W3SchoolsSQL - HTML Tutorial - W3SchoolsHTML tables allow web developers to \u2026...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:37:38.155314",
+    "id": "web-dev-session_197"
+  },
+  {
+    "chat_id": "web-dev-session",
+    "message": "What is CSS used for?",
+    "sender": "user",
+    "timestamp": "2025-07-27T19:37:49.386884",
+    "id": "web-dev-session_198"
+  },
+  {
+    "chat_id": "web-dev-session",
+    "message": "Title: What is CSS? - GeeksforGeeks Snippet: 4 days ago \u00b7 CSS, which stands for Cascading Style Sheets is a language in web development that enhances the \u2026 Title: CSS Introduction - W3Schools Snippet: Why Use CSS? CSS is used to define styles for your web pages, including the design, layout and variations in display for different \u2026 Title: What is CSS Used For? I Codecademy Snippet: Jun 14, 2021 \u00b7 CSS stands for Cascading Style Sheets, and it\u2019s used to add style to a web page by dictating how ...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T19:37:51.432049",
+    "id": "web-dev-session_199"
   }
 ]

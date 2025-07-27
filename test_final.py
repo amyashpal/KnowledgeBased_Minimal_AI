@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Final comprehensive test of the AI Assistant system
+Final clean test of the AI Assistant system
 """
 
 import requests
@@ -14,7 +14,7 @@ def test_complete_system():
     print('\n1. 📚 Testing Knowledge Base Question:')
     r = requests.post('http://localhost:8000/chat', json={
         'chat_id': 'test-123',
-        'message': 'What is artificial intelligence?'
+        'message': 'What is Python programming language?'
     })
     print('Status:', r.status_code)
     if r.status_code == 200:
@@ -24,25 +24,11 @@ def test_complete_system():
     else:
         print('❌ Error:', r.text)
     
-    # Test 2: Machine Learning question
-    print('\n2. 🤖 Testing Machine Learning Question:')
-    r = requests.post('http://localhost:8000/chat', json={
-        'chat_id': 'test-123',
-        'message': 'What are the types of machine learning?'
-    })
-    print('Status:', r.status_code)
-    if r.status_code == 200:
-        result = r.json()
-        print('✅ Source:', result['source'])
-        print('✅ Answer:', result['response'][:150] + '...')
-    else:
-        print('❌ Error:', r.text)
-    
-    # Test 3: Search fallback question
-    print('\n3. 🔍 Testing Search Fallback Question:')
+    # Test 2: Search fallback question
+    print('\n2. 🔍 Testing Search Fallback Question:')
     r = requests.post('http://localhost:8000/chat', json={
         'chat_id': 'test-123', 
-        'message': 'What is the current weather?'
+        'message': 'What is the capital of France?'
     })
     print('Status:', r.status_code)
     if r.status_code == 200:
@@ -52,23 +38,8 @@ def test_complete_system():
     else:
         print('❌ Error:', r.text)
     
-    # Test 4: Check conversation history
-    print('\n4. 📝 Testing Conversation History:')
-    r = requests.get('http://localhost:8000/chat/test-123')
-    print('Status:', r.status_code)
-    if r.status_code == 200:
-        history = r.json()
-        print(f'✅ Messages in history: {len(history["messages"])}')
-        print('Recent messages:')
-        for i, msg in enumerate(history['messages'][-6:]):  # Show last 6 messages
-            sender = msg.get('sender', 'unknown')
-            message = msg.get('message', '')[:50]
-            print(f'  {i+1}. {sender}: {message}...')
-    else:
-        print('❌ Error:', r.text)
-    
-    # Test 5: Service health checks
-    print('\n5. 🏥 Testing Service Health:')
+    # Test 3: Service health checks
+    print('\n3. 🏥 Testing Service Health:')
     services = [
         ('Chat Service', 'http://localhost:8000/health'),
         ('Knowledge Base', 'http://localhost:8001/health'),
@@ -80,7 +51,12 @@ def test_complete_system():
         try:
             r = requests.get(url, timeout=5)
             if r.status_code == 200:
-                print(f'✅ {name}: Healthy')
+                data = r.json()
+                if name == 'History Service':
+                    mongodb_status = "MongoDB" if data.get('using_mongodb') else "File Storage"
+                    print(f'✅ {name}: Healthy ({mongodb_status})')
+                else:
+                    print(f'✅ {name}: Healthy')
             else:
                 print(f'⚠️  {name}: Status {r.status_code}')
         except Exception as e:

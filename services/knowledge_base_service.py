@@ -9,14 +9,21 @@ import requests
 import json
 import re
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = FastAPI(title="Knowledge Base Service", version="1.0.0")
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Gemini API configuration
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyCgVAm2hJGrcc-vKi3jNMDswzrgykmw3Ks")
+# Configuration from environment variables
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
+CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "500"))
+CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "50"))
+CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", "0.15"))
 
 # Try to import dependencies with fallbacks
 try:
@@ -216,8 +223,8 @@ async def query_knowledge_base(text: str):
                 
                 logger.info(f"  {i+1}. {filename} - Confidence: {confidence:.3f}")
                 
-                # Lower threshold to catch more relevant results
-                if confidence > 0.2:  # Lowered from 0.4 to 0.2
+                # Stricter threshold for better relevance
+                if confidence > 0.4:  # Raised back to 0.4 for better precision
                     if confidence > best_confidence:
                         best_confidence = confidence
                         best_match = doc
@@ -283,6 +290,7 @@ async def query_knowledge_base(text: str):
             for doc in document_store:
                 doc_text = doc['text'].lower()
                 doc_words = set(doc_text.split())
+                filename = doc.get('filename', '').lower()
                 
                 # Multiple scoring methods
                 # 1. Keyword overlap score
@@ -294,10 +302,22 @@ async def query_knowledge_base(text: str):
                 # 3. Phrase matching bonus
                 phrase_score = 1.0 if query_lower in doc_text else 0.0
                 
-                # Combined score with weights
-                combined_score = (overlap_score * 0.4) + (substring_score * 0.4) + (phrase_score * 0.2)
+                # 4. Filename relevance bonus
+                filename_score = sum(1 for word in query_words if word in filename) / len(query_words) if query_words else 0
                 
-                if combined_score > 0.1:  # Lower threshold for text search
+                # 5. Specific keyword matching for better relevance
+                specific_matches = 0
+                for word in query_words:
+                    if len(word) > 3:  # Only consider longer words
+                        if word in doc_text:
+                            specific_matches += 1
+                
+                specific_score = specific_matches / len([w for w in query_words if len(w) > 3]) if [w for w in query_words if len(w) > 3] else 0
+                
+                # Combined score with weights
+                combined_score = (overlap_score * 0.3) + (substring_score * 0.3) + (phrase_score * 0.2) + (filename_score * 0.1) + (specific_score * 0.1)
+                
+                if combined_score > 0.3:  # Higher threshold for better relevance
                     matches.append({
                         'doc': doc,
                         'score': combined_score,
@@ -376,44 +396,113 @@ async def health_check():
     return {"status": "healthy", "using_embeddings": USE_EMBEDDINGS}
 
 async def enhance_answer_with_gemini(query: str, document_content: str) -> str:
-    """Enhance knowledge base answers using Gemini API"""
-    if not GEMINI_API_KEY or GEMINI_API_KEY == "your-gemini-api-key":
+    """Enhance knowledge base answers using Gemini API with improved prompting and fallback handling"""
+    if not GEMINI_API_KEY:
+        logger.debug("Gemini API key not configured, skipping enhancement")
         return None
     
     try:
-        prompt = f"""Based on this document content, provide a clear and direct answer to the question: "{query}"
+        # Enhanced prompt for better responses
+        prompt = f"""You are a helpful AI assistant. Based on the provided document content, answer the user's question accurately and concisely.
 
-Document content: {document_content}
+User Question: "{query}"
 
-Please provide a helpful, accurate answer based on the document. Keep it concise (2-3 sentences) and directly address the question. If the document doesn't contain relevant information, say so."""
+Document Content:
+{document_content}
+
+Instructions:
+1. Provide a clear, direct answer based ONLY on the information in the document
+2. Keep your response concise but informative (2-4 sentences)
+3. If the document contains relevant information, synthesize it into a helpful answer
+4. Use natural, conversational language
+5. Focus on answering the specific question asked
+6. Don't add information not present in the document
+
+Answer:"""
 
         payload = {
             "contents": [{
                 "parts": [{"text": prompt}]
-            }]
+            }],
+            "generationConfig": {
+                "temperature": 0.2,  # Even lower temperature for more focused responses
+                "topK": 32,
+                "topP": 0.9,
+                "maxOutputTokens": 250,
+                "stopSequences": ["User Question:", "Document Content:", "Instructions:"]
+            },
+            "safetySettings": [
+                {
+                    "category": "HARM_CATEGORY_HARASSMENT",
+                    "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+                },
+                {
+                    "category": "HARM_CATEGORY_HATE_SPEECH", 
+                    "threshold": "BLOCK_MEDIUM_AND_ABOVE"
+                }
+            ]
         }
         
         headers = {
             "Content-Type": "application/json"
         }
         
+        logger.debug(f"🤖 Enhancing answer with Gemini for query: '{query[:30]}...'")
+        
         response = requests.post(
             f"{GEMINI_API_URL}?key={GEMINI_API_KEY}",
             headers=headers,
             json=payload,
-            timeout=15
+            timeout=15  # Reasonable timeout
         )
         
         if response.status_code == 200:
             data = response.json()
-            if data.get("candidates") and data["candidates"][0].get("content"):
+            if (data.get("candidates") and 
+                len(data["candidates"]) > 0 and 
+                data["candidates"][0].get("content") and
+                data["candidates"][0]["content"].get("parts") and
+                len(data["candidates"][0]["content"]["parts"]) > 0):
+                
                 answer = data["candidates"][0]["content"]["parts"][0]["text"]
-                return clean_text(answer)
-        
-        return None
+                cleaned_answer = clean_text(answer)
+                
+                # Enhanced validation of the response
+                if (cleaned_answer and 
+                    len(cleaned_answer.strip()) > 15 and
+                    not cleaned_answer.lower().startswith("the provided document doesn't contain") and
+                    not cleaned_answer.lower().startswith("i don't have") and
+                    not cleaned_answer.lower().startswith("i cannot") and
+                    not cleaned_answer.lower().startswith("i'm sorry") and
+                    not cleaned_answer.lower().startswith("based on the document") and
+                    cleaned_answer.lower() != document_content.lower()[:100]):  # Not just repeating content
+                    
+                    logger.info(f"✅ Gemini enhanced answer: '{cleaned_answer[:50]}...'")
+                    return cleaned_answer
+                else:
+                    logger.debug("❌ Gemini response not useful, using original content")
+                    return None
+            else:
+                logger.debug("❌ Gemini response structure invalid")
+                return None
+        elif response.status_code == 429:
+            logger.warning("⚠️ Gemini API rate limit exceeded, using original content")
+            return None
+        elif response.status_code == 403:
+            logger.warning("⚠️ Gemini API access denied, using original content")
+            return None
+        else:
+            logger.warning(f"⚠️ Gemini API error {response.status_code}, using original content")
+            return None
     
+    except requests.exceptions.Timeout:
+        logger.warning("⚠️ Gemini API timeout, using original content")
+        return None
+    except requests.exceptions.ConnectionError:
+        logger.warning("⚠️ Gemini API connection error, using original content")
+        return None
     except Exception as e:
-        logger.error(f"Gemini enhancement failed: {e}")
+        logger.warning(f"⚠️ Gemini enhancement failed: {str(e)[:100]}, using original content")
         return None
 
 def clean_text(text: str) -> str:
