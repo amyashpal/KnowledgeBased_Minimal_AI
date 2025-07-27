@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - Admin Panel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-cog text-2xl"></i>
+                <h1 class="text-2xl font-bold">Admin Panel</h1>
+            </div>
+            <a href="/" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors">
+                <i class="fas fa-arrow-left mr-2"></i>Back to Chat
+            </a>
+        </div>
+    </header>
+
+    <div class="container mx-auto p-6">
+        <!-- System Overview -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Chat Service</p>
+                        <p id="chat-status" class="text-2xl font-bold text-gray-900">-</p>
+                    </div>
+                    <div class="p-3 bg-blue-100 rounded-full">
+                        <i class="fas fa-comments text-blue-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Knowledge Base</p>
+                        <p id="kb-docs" class="text-2xl font-bold text-gray-900">-</p>
+                    </div>
+                    <div class="p-3 bg-green-100 rounded-full">
+                        <i class="fas fa-database text-green-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Search Service</p>
+                        <p id="search-status" class="text-2xl font-bold text-gray-900">-</p>
+                    </div>
+                    <div class="p-3 bg-yellow-100 rounded-full">
+                        <i class="fas fa-search text-yellow-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Total Messages</p>
+                        <p id="total-messages" class="text-2xl font-bold text-gray-900">-</p>
+                    </div>
+                    <div class="p-3 bg-purple-100 rounded-full">
+                        <i class="fas fa-envelope text-purple-600 text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Service Details -->
+            <div class="bg-white rounded-lg shadow-lg">
+                <div class="p-6 border-b">
+                    <h2 class="text-xl font-semibold">
+                        <i class="fas fa-server mr-2 text-blue-600"></i>Service Status
+                    </h2>
+                </div>
+                <div class="p-6">
+                    <div id="service-details" class="space-y-4">
+                        <!-- Service details will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Configuration -->
+            <div class="bg-white rounded-lg shadow-lg">
+                <div class="p-6 border-b">
+                    <h2 class="text-xl font-semibold">
+                        <i class="fas fa-sliders-h mr-2 text-green-600"></i>System Configuration
+                    </h2>
+                </div>
+                <div class="p-6 space-y-6">
+                    <!-- API Endpoints -->
+                    <div>
+                        <h3 class="text-lg font-medium mb-3">API Endpoints</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Chat Service:</span>
+                                <code class="bg-gray-100 px-2 py-1 rounded">localhost:8000</code>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Knowledge Base:</span>
+                                <code class="bg-gray-100 px-2 py-1 rounded">localhost:8001</code>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Search Service:</span>
+                                <code class="bg-gray-100 px-2 py-1 rounded">localhost:8002</code>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">History Service:</span>
+                                <code class="bg-gray-100 px-2 py-1 rounded">localhost:8003</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div>
+                        <h3 class="text-lg font-medium mb-3">Features</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-sm">Vector Embeddings (Fallback: Text Search)</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-sm">Gemini API Integration</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-sm">DuckDuckGo Search</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check-circle text-green-500"></i>
+                                <span class="text-sm">Persistent Chat History</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- API Documentation -->
+        <div class="mt-8 bg-white rounded-lg shadow-lg">
+            <div class="p-6 border-b">
+                <h2 class="text-xl font-semibold">
+                    <i class="fas fa-book mr-2 text-purple-600"></i>API Documentation
+                </h2>
+            </div>
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Chat Service APIs -->
+                    <div>
+                        <h3 class="text-lg font-medium mb-3 text-blue-600">Chat Service</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="border rounded p-3">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">POST</span>
+                                    <code>/chat</code>
+                                </div>
+                                <p class="text-gray-600">Submit user query and receive response</p>
+                            </div>
+                            <div class="border rounded p-3">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">GET</span>
+                                    <code>/chat/{chat_id}</code>
+                                </div>
+                                <p class="text-gray-600">Retrieve chat history</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Knowledge Base APIs -->
+                    <div>
+                        <h3 class="text-lg font-medium mb-3 text-green-600">Knowledge Base</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="border rounded p-3">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs font-medium">GET</span>
+                                    <code>/query</code>
+                                </div>
+                                <p class="text-gray-600">Search knowledge base with query</p>
+                            </div>
+                            <div class="border rounded p-3">
+                                <div class="flex items-center space-x-2 mb-2">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-medium">POST</span>
+                                    <code>/ingest</code>
+                                </div>
+                                <p class="text-gray-600">Add documents to knowledge base</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load system stats on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSystemStats();
+            setInterval(loadSystemStats, 10000); // Update every 10 seconds
+        });
+
+        function loadSystemStats() {
+            fetch('/api/stats')
+            .then(response => response.json())
+            .then(data => {
+                updateOverviewCards(data);
+                updateServiceDetails(data);
+            })
+            .catch(error => {
+                console.error('Failed to load system stats:', error);
+            });
+        }
+
+        function updateOverviewCards(data) {
+            // Chat Service Status
+            const chatStatus = data.chat?.status === 'healthy' ? 'Online' : 'Offline';
+            document.getElementById('chat-status').textContent = chatStatus;
+            document.getElementById('chat-status').className = 
+                `text-2xl font-bold ${data.chat?.status === 'healthy' ? 'text-green-600' : 'text-red-600'}`;
+
+            // Knowledge Base Documents
+            const kbDocs = data.knowledge_base?.data?.total_documents || 0;
+            document.getElementById('kb-docs').textContent = kbDocs;
+
+            // Search Service Status
+            const searchStatus = data.search?.status === 'healthy' ? 'Online' : 'Offline';
+            document.getElementById('search-status').textContent = searchStatus;
+            document.getElementById('search-status').className = 
+                `text-2xl font-bold ${data.search?.status === 'healthy' ? 'text-green-600' : 'text-red-600'}`;
+
+            // Total Messages
+            const totalMessages = data.history?.data?.total_messages || 0;
+            document.getElementById('total-messages').textContent = totalMessages;
+        }
+
+        function updateServiceDetails(data) {
+            const container = document.getElementById('service-details');
+            let html = '';
+
+            const services = [
+                { key: 'chat', name: 'Chat Service', icon: 'fa-comments', color: 'blue' },
+                { key: 'knowledge_base', name: 'Knowledge Base', icon: 'fa-database', color: 'green' },
+                { key: 'search', name: 'Search Service', icon: 'fa-search', color: 'yellow' },
+                { key: 'history', name: 'History Service', icon: 'fa-history', color: 'purple' }
+            ];
+
+            services.forEach(service => {
+                const serviceData = data[service.key];
+                const isHealthy = serviceData?.status === 'healthy';
+                const statusColor = isHealthy ? 'text-green-600' : 'text-red-600';
+                const statusText = serviceData?.status || 'Unknown';
+
+                html += `
+                    <div class="border rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas ${service.icon} text-${service.color}-600"></i>
+                                <span class="font-medium">${service.name}</span>
+                            </div>
+                            <span class="text-sm font-medium ${statusColor}">${statusText}</span>
+                        </div>
+                        ${serviceData?.data ? `
+                            <div class="text-sm text-gray-600 mt-2">
+                                <pre class="bg-gray-50 p-2 rounded text-xs overflow-x-auto">${JSON.stringify(serviceData.data, null, 2)}</pre>
+                            </div>
+                        ` : ''}
+                        ${serviceData?.error ? `
+                            <div class="text-sm text-red-600 mt-2">
+                                Error: ${serviceData.error}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+    </script>
+</body>
+</html>

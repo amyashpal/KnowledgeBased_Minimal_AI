@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .chat-container {
+            height: calc(100vh - 200px);
+        }
+        .message-bubble {
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+        .typing-indicator {
+            display: none;
+        }
+        .typing-indicator.show {
+            display: flex;
+        }
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #9CA3AF;
+            border-radius: 50%;
+            display: inline-block;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-robot text-2xl"></i>
+                <h1 class="text-2xl font-bold">AI Assistant</h1>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2">
+                    <div id="status-indicator" class="w-3 h-3 bg-green-400 rounded-full"></div>
+                    <span id="status-text" class="text-sm">Online</span>
+                </div>
+                <a href="/admin" class="bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-lg transition-colors">
+                    <i class="fas fa-cog mr-2"></i>Admin
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto p-4 flex gap-6">
+        <!-- Main Chat Area -->
+        <div class="flex-1 bg-white rounded-lg shadow-lg">
+            <!-- Chat Header -->
+            <div class="bg-gray-50 p-4 border-b rounded-t-lg">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-lg font-semibold text-gray-800">
+                        <i class="fas fa-comments mr-2"></i>Chat Session
+                    </h2>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-600">Session ID:</span>
+                        <input type="text" id="chat-id" value="user-session-1" 
+                               class="text-sm bg-white border rounded px-2 py-1 w-32">
+                        <button onclick="clearChat()" class="text-red-500 hover:text-red-700">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages Container -->
+            <div id="messages" class="chat-container overflow-y-auto p-4 space-y-4">
+                <!-- Welcome Message -->
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-robot text-white text-sm"></i>
+                    </div>
+                    <div class="message-bubble bg-gray-100 p-3 rounded-lg">
+                        <p class="text-gray-800">Hello! I'm your AI assistant. I can help you with questions using my knowledge base or search the web for information. How can I assist you today?</p>
+                        <span class="text-xs text-gray-500 mt-1 block">System</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div id="typing-indicator" class="typing-indicator px-4 pb-2">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-robot text-white text-sm"></i>
+                    </div>
+                    <div class="bg-gray-100 p-3 rounded-lg">
+                        <div class="flex space-x-1">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="border-t p-4">
+                <form id="chat-form" class="flex space-x-3">
+                    <input type="text" id="message-input" placeholder="Type your message here..." 
+                           class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors">
+                        <i class="fas fa-paper-plane mr-2"></i>Send
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="w-80 space-y-6">
+            <!-- Quick Actions -->
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <h3 class="text-lg font-semibold mb-4">
+                    <i class="fas fa-bolt mr-2 text-yellow-500"></i>Quick Actions
+                </h3>
+                <div class="space-y-2">
+                    <button onclick="askQuestion('What is artificial intelligence?')" 
+                            class="w-full text-left p-2 hover:bg-gray-100 rounded">
+                        <i class="fas fa-brain mr-2 text-purple-500"></i>What is AI?
+                    </button>
+                    <button onclick="askQuestion('What are the types of machine learning?')" 
+                            class="w-full text-left p-2 hover:bg-gray-100 rounded">
+                        <i class="fas fa-cogs mr-2 text-green-500"></i>Machine Learning Types
+                    </button>
+                    <button onclick="askQuestion('Why is Python popular for AI?')" 
+                            class="w-full text-left p-2 hover:bg-gray-100 rounded">
+                        <i class="fas fa-code mr-2 text-blue-500"></i>Python for AI
+                    </button>
+                </div>
+            </div>
+
+            <!-- Upload Documents -->
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <h3 class="text-lg font-semibold mb-4">
+                    <i class="fas fa-upload mr-2 text-green-500"></i>Upload Knowledge
+                </h3>
+                <form id="upload-form" enctype="multipart/form-data">
+                    <input type="file" id="file-input" multiple accept=".txt,.md,.pdf" 
+                           class="w-full border border-gray-300 rounded-lg p-2 mb-3">
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition-colors">
+                        <i class="fas fa-cloud-upload-alt mr-2"></i>Upload Files
+                    </button>
+                </form>
+                <div id="upload-status" class="mt-2 text-sm"></div>
+            </div>
+
+            <!-- System Status -->
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <h3 class="text-lg font-semibold mb-4">
+                    <i class="fas fa-heartbeat mr-2 text-red-500"></i>System Status
+                </h3>
+                <div id="system-status" class="space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm">Loading...</span>
+                        <div class="w-3 h-3 bg-gray-400 rounded-full animate-pulse"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentChatId = 'user-session-1';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSystemStatus();
+            setInterval(loadSystemStatus, 30000); // Update every 30 seconds
+        });
+
+        // Chat form submission
+        document.getElementById('chat-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const input = document.getElementById('message-input');
+            const message = input.value.trim();
+            if (message) {
+                sendMessage(message);
+                input.value = '';
+            }
+        });
+
+        // Upload form submission
+        document.getElementById('upload-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            uploadFiles();
+        });
+
+        // Update chat ID
+        document.getElementById('chat-id').addEventListener('change', function(e) {
+            currentChatId = e.target.value;
+            loadChatHistory();
+        });
+
+        function sendMessage(message) {
+            addMessage(message, 'user');
+            showTypingIndicator();
+
+            fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: currentChatId,
+                    message: message
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                hideTypingIndicator();
+                if (data.error) {
+                    addMessage(`Error: ${data.error}`, 'system', 'error');
+                } else {
+                    addMessage(data.response, 'assistant', data.source);
+                }
+            })
+            .catch(error => {
+                hideTypingIndicator();
+                addMessage(`Connection error: ${error.message}`, 'system', 'error');
+            });
+        }
+
+        function addMessage(text, sender, source = null) {
+            const messagesContainer = document.getElementById('messages');
+            const messageDiv = document.createElement('div');
+            
+            const isUser = sender === 'user';
+            const isError = source === 'error';
+            
+            messageDiv.className = `flex items-start space-x-3 ${isUser ? 'flex-row-reverse space-x-reverse' : ''}`;
+            
+            const avatarClass = isUser ? 'bg-green-500' : (isError ? 'bg-red-500' : 'bg-blue-500');
+            const avatarIcon = isUser ? 'fa-user' : (isError ? 'fa-exclamation-triangle' : 'fa-robot');
+            const bubbleClass = isUser ? 'bg-blue-500 text-white' : (isError ? 'bg-red-100 text-red-800' : 'bg-gray-100');
+            
+            messageDiv.innerHTML = `
+                <div class="w-8 h-8 ${avatarClass} rounded-full flex items-center justify-center flex-shrink-0">
+                    <i class="fas ${avatarIcon} text-white text-sm"></i>
+                </div>
+                <div class="message-bubble ${bubbleClass} p-3 rounded-lg">
+                    <p class="whitespace-pre-wrap">${text}</p>
+                    <div class="flex justify-between items-center mt-1">
+                        <span class="text-xs opacity-70">${sender}</span>
+                        ${source && source !== 'error' ? `<span class="text-xs opacity-70 bg-black bg-opacity-20 px-2 py-1 rounded">${source}</span>` : ''}
+                    </div>
+                </div>
+            `;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            document.getElementById('typing-indicator').classList.add('show');
+            const messagesContainer = document.getElementById('messages');
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            document.getElementById('typing-indicator').classList.remove('show');
+        }
+
+        function askQuestion(question) {
+            document.getElementById('message-input').value = question;
+            sendMessage(question);
+        }
+
+        function clearChat() {
+            const messagesContainer = document.getElementById('messages');
+            messagesContainer.innerHTML = `
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-robot text-white text-sm"></i>
+                    </div>
+                    <div class="message-bubble bg-gray-100 p-3 rounded-lg">
+                        <p class="text-gray-800">Chat cleared. How can I help you?</p>
+                        <span class="text-xs text-gray-500 mt-1 block">System</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function uploadFiles() {
+            const fileInput = document.getElementById('file-input');
+            const statusDiv = document.getElementById('upload-status');
+            
+            if (fileInput.files.length === 0) {
+                statusDiv.innerHTML = '<span class="text-red-500">Please select files to upload</span>';
+                return;
+            }
+
+            const formData = new FormData();
+            for (let file of fileInput.files) {
+                formData.append('files', file);
+            }
+
+            statusDiv.innerHTML = '<span class="text-blue-500">Uploading...</span>';
+
+            fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    statusDiv.innerHTML = `<span class="text-red-500">Error: ${data.error}</span>`;
+                } else {
+                    statusDiv.innerHTML = `<span class="text-green-500">Success! Added ${data.documents_added} documents</span>`;
+                    fileInput.value = '';
+                }
+            })
+            .catch(error => {
+                statusDiv.innerHTML = `<span class="text-red-500">Upload failed: ${error.message}</span>`;
+            });
+        }
+
+        function loadSystemStatus() {
+            fetch('/api/stats')
+            .then(response => response.json())
+            .then(data => {
+                const statusContainer = document.getElementById('system-status');
+                const statusIndicator = document.getElementById('status-indicator');
+                const statusText = document.getElementById('status-text');
+                
+                let allHealthy = true;
+                let statusHTML = '';
+                
+                const serviceNames = {
+                    'chat': 'Chat Service',
+                    'knowledge_base': 'Knowledge Base',
+                    'search': 'Search Service',
+                    'history': 'History Service'
+                };
+                
+                for (const [key, service] of Object.entries(data)) {
+                    const name = serviceNames[key] || key;
+                    const isHealthy = service.status === 'healthy';
+                    if (!isHealthy) allHealthy = false;
+                    
+                    const statusColor = isHealthy ? 'text-green-500' : 'text-red-500';
+                    const dotColor = isHealthy ? 'bg-green-400' : 'bg-red-400';
+                    
+                    statusHTML += `
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">${name}</span>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-xs ${statusColor}">${service.status}</span>
+                                <div class="w-3 h-3 ${dotColor} rounded-full"></div>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                statusContainer.innerHTML = statusHTML;
+                
+                // Update header status
+                if (allHealthy) {
+                    statusIndicator.className = 'w-3 h-3 bg-green-400 rounded-full';
+                    statusText.textContent = 'Online';
+                } else {
+                    statusIndicator.className = 'w-3 h-3 bg-red-400 rounded-full';
+                    statusText.textContent = 'Issues';
+                }
+            })
+            .catch(error => {
+                document.getElementById('system-status').innerHTML = 
+                    '<div class="text-red-500 text-sm">Status check failed</div>';
+            });
+        }
+    </script>
+</body>
+</html>
