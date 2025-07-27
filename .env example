@@ -1,0 +1,27 @@
+# Gemini API Configuration
+GEMINI_API_KEY=YOUR_API_KEY
+
+# MongoDB Configuration
+# Uncomment the line below to enable MongoDB for history storage
+MONGO_URL=mongodb://localhost:27017/
+
+# For MongoDB Atlas (cloud), use this format instead:
+# MONGO_URL=mongodb+srv://username:password@cluster.mongodb.net/ai_assistant
+
+# Leave MONGO_URL commented out to use file-based storage
+
+# Service Configuration
+CHAT_SERVICE_PORT=8000
+KNOWLEDGE_BASE_PORT=8001
+SEARCH_SERVICE_PORT=8002
+HISTORY_SERVICE_PORT=8003
+WEB_GUI_PORT=8080
+
+# Knowledge Base Configuration
+CHUNK_SIZE=500
+CHUNK_OVERLAP=50
+CONFIDENCE_THRESHOLD=0.15
+
+# Search Service Configuration
+SEARCH_TIMEOUT=30
+MAX_SEARCH_RESULTS=10
