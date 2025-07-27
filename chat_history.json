@@ -1,0 +1,492 @@
+[
+  {
+    "chat_id": "user-session-1",
+    "message": "india is what?",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:05:16.917193",
+    "id": "user-session-1_0"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text is irrelevant to the question \"India is what?\". It describes YouTube and a K-Pop group. India is a country located in South Asia.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:05:18.949607",
+    "id": "user-session-1_1"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "tell me about mandeep",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:07:43.597865",
+    "id": "user-session-1_2"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Bhabhor is an aspiring Laravel developer from Gandhinagar, Gujarat, India. He has a B.Tech in Information Technology from Anand Agricultural University and seeks a challenging role utilizing his backend development skills. His contact information includes his email, LinkedIn profile, and GitHub account.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:07:45.627294",
+    "id": "user-session-1_3"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "what are his technicak skills",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:08:17.046952",
+    "id": "user-session-1_4"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text does not contain information about anyone's technical skills. The snippets discuss a question-and-answer website, a story about a king and an artist, and a comparison of computer hardware brands.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:08:19.076947",
+    "id": "user-session-1_5"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "what are  technicak skills of mandeep",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:08:55.664878",
+    "id": "user-session-1_6"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text only states that Mandeep is an aspiring Laravel developer with strong web development skills. Specific technical skills beyond that are not listed.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:08:57.699080",
+    "id": "user-session-1_7"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "what tools does mandeep know",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:09:36.498690",
+    "id": "user-session-1_8"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Without further information on who Mandeep is, it's impossible to say what tools they know. The answer depends entirely on their profession, hobbies, and experience. More context is needed.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:09:38.530438",
+    "id": "user-session-1_9"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "tell me about mandeep",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:11:40.679801",
+    "id": "user-session-1_10"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided search results are about the English word \"tell\" and its grammatical usage, not about a person named Mandeep. Therefore, I cannot tell you about Mandeep based on this information. There is no information about any individual named Mandeep in the given text.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:11:42.704456",
+    "id": "user-session-1_11"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "TELL ME ABOUT INDIA",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:20:49.372590",
+    "id": "user-session-1_12"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "India is a vast, South Asian country with a diverse population exceeding 1.4 billion, making it the world's most populous nation. It boasts a rich history and culture, encompassing numerous languages, religions, and traditions. Its economy is rapidly growing but faces significant challenges regarding poverty and inequality.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:20:51.416457",
+    "id": "user-session-1_13"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "WHAT THOIS DOCUMENT SAYS",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:21:54.538969",
+    "id": "user-session-1_14"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text snippets discuss two unrelated topics. One reports record-breaking cold temperatures in Central and Eastern Asia. The other discusses the definition of \"illegal immigrant\" and a global migration compact.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:21:56.566772",
+    "id": "user-session-1_15"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "LAST DOCUMENT",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:22:24.916022",
+    "id": "user-session-1_16"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text doesn't refer to a specific \"last document\". The word \"last\" is discussed in its grammatical usage as an adjective (meaning \"final\") and a noun (meaning \"previous\" or \"final\"). More context is needed to identify a particular document.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:22:26.947183",
+    "id": "user-session-1_17"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "TELL ME ABOUT MANDEEP BHABHOTR",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:22:49.850671",
+    "id": "user-session-1_18"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Bhabhor is an aspiring Laravel developer from Gandhinagar, Gujarat, India, with a B.Tech in Information Technology from Anand Agricultural University. He seeks a challenging role utilizing his backend development skills and project experience.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:22:51.882042",
+    "id": "user-session-1_19"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "WHAT ARE TECHNICAL SKILLS OF MANDEEP BHABHOR",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:23:25.520142",
+    "id": "user-session-1_20"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text states Mandeep Bhabhor is an aspiring Laravel developer with strong web development skills. The document does not list specific technical skills beyond that.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:23:27.552458",
+    "id": "user-session-1_21"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "WHICH UNIVERSITY IS MANDEEP BHABHOR FROM",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:24:23.462184",
+    "id": "user-session-1_22"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Bhabhor is from Anand Agricultural University (AAU). The document states he received a B.Tech in Information Technology from this university.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:24:25.495953",
+    "id": "user-session-1_23"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "WHAT ARE MAJOR PROJECTS OF MANDEEP BHABHOR",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:25:01.328864",
+    "id": "user-session-1_24"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Bhabhor's major projects include AgriMart, a web application featuring integrated form validation and a responsive UI, and 2025 V-Stream, a scalable video streaming platform utilizing Laravel, FFmpeg, and HLS.js.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:25:03.360407",
+    "id": "user-session-1_25"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "TELL ME ALLL ABOUT DEV",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:25:45.071893",
+    "id": "user-session-1_26"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The document refers to \"DEV\" implicitly as a person, a final-year B.Tech student passionate about web development and backend engineering, skilled in Laravel and Firebase, and interested in using technology to help small farmers. They have completed two full-stack Laravel projects.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:25:47.102091",
+    "id": "user-session-1_27"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "who is dev",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:26:48.866509",
+    "id": "user-session-1_28"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text describes a final-year B.Tech CAIT student passionate about web development and backend engineering, but doesn't state who \"dev\" is. There is no information about an individual named Dev.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:26:50.899492",
+    "id": "user-session-1_29"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "tell me about dev",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:28:02.585039",
+    "id": "user-session-1_30"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Dev is a final-year B.Tech student passionate about web development and backend engineering. They have experience building full-stack Laravel projects and possess skills in Laravel and Firebase. Their goal is to leverage technology to help small and local farmers.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:28:04.643691",
+    "id": "user-session-1_31"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "tell me about coding standards ?",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:31:02.814676",
+    "id": "user-session-1_32"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Coding standards, as defined in the document, encompass proper data validation on both the frontend and backend, avoidance of hardcoded values (using dynamic values instead), and the creation of modular, reusable code components or functions to enhance maintainability. This accounts for 40% of the review criteria.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:31:04.845292",
+    "id": "user-session-1_33"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "what are  Extracurricular of mandeep",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:32:23.828017",
+    "id": "user-session-1_34"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text describes Mandeep's professional projects and technical skills, not extracurricular activities. Therefore, Mandeep's extracurricular activities are not mentioned in this document.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:32:25.860545",
+    "id": "user-session-1_35"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "tell me about UI/UX",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:33:03.423887",
+    "id": "user-session-1_36"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text does not contain information about UI/UX. Therefore, I cannot answer your question using only this document.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:33:05.451032",
+    "id": "user-session-1_37"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "tell me about UI/UX in review criteria",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:33:53.665590",
+    "id": "user-session-1_38"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided document does not contain information about UI/UX review criteria. The criteria focus on database design and coding standards.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:33:55.694858",
+    "id": "user-session-1_39"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "which documents are in your knowledge base",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:34:55.409060",
+    "id": "user-session-1_40"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text describes software development projects and their features, not a knowledge base of documents. Therefore, I cannot answer which documents are in the knowledge base based on this content.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:34:57.439037",
+    "id": "user-session-1_41"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "who is ceo of microsoft",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:35:39.238786",
+    "id": "user-session-1_42"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Satya Nadella is the CEO of Microsoft. He assumed the role in 2014 and has overseen significant changes in the company's strategy and growth.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:35:41.272203",
+    "id": "user-session-1_43"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "tell me about dev",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:45:13.484119",
+    "id": "user-session-1_44"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The document states that \"dev\" is a 21-year-old person who identifies as gay and likes boys. The document also uses informal language to describe dev as intelligent.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:45:15.515007",
+    "id": "user-session-1_45"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "tell me about mandeep",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:45:49.017205",
+    "id": "user-session-1_46"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Bhabhor is a final-year B.Tech student aspiring to be a Laravel developer. He has built several projects, including an e-commerce platform and a video streaming platform, showcasing his skills in backend development and Laravel. He's also active in extracurricular activities and volunteering.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:45:51.043585",
+    "id": "user-session-1_47"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "what is dev's age?",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:46:29.276251",
+    "id": "user-session-1_48"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Dev's age is 21. This information is explicitly stated in the provided text.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:46:31.305158",
+    "id": "user-session-1_49"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Extracurricular of mandeep bhahhor",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:47:10.282166",
+    "id": "user-session-1_50"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Bhabhor's extracurricular activities include table tennis (representing his college in tournaments and festivals), volunteering at college workshops and NSS activities (earning an NSS certificate), and participating in the Smart Gujarat Government Hackathon and Odoo Hackathon.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:47:12.314208",
+    "id": "user-session-1_51"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "what is UI/UX design",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:47:46.866317",
+    "id": "user-session-1_52"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Based on the provided document, UI/UX design encompasses aspects like responsiveness, features such as pagination and search/filter functionality, and appropriate color combinations to ensure a user-friendly interface. It focuses on the user interface and user experience of the application.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:47:48.896172",
+    "id": "user-session-1_53"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "dev identify hisself as ?",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:48:32.066127",
+    "id": "user-session-1_54"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "The provided text states \"dev is gay\" and \"dev likes boys\". Therefore, dev identifies as gay.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:48:34.091511",
+    "id": "user-session-1_55"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "mandeep's mini projects ?",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:49:09.939394",
+    "id": "user-session-1_56"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep's mini projects include a simple role-based login system with hashed passwords and session tracking (2023), and a LLaMA chatbot built using Laravel, LLaMA 3B, and LaravelOllama (2025). These projects demonstrate skills in backend development and AI integration.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:49:11.978255",
+    "id": "user-session-1_57"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "code standards?",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:49:45.964735",
+    "id": "user-session-1_58"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Rameshbhai Bhabhor Gandhinagar, Gujarat, India +91-9313467816 Objective mandeep101009@gmail.com linkedin.com/in/mandeep-bhabhor-305a62334 github.com/Mandeep-Bhabhor Aspiring Laravel Developer with a passion for backend development. Seeking to apply strong web-development skills, problem-solving mindset, and project experience in a challenging role that makes real-world impact. Education Anand Agricultural University (AAU) B.Tech in Information Technology (CAIT) Technical Skills Oct. 2022\u2013 May 2026 Anand, Gujarat Languages: PHP, Python, C, JavaScript, HTML, CSS, SQL Frameworks: Laravel, Bootstrap, React, ASP.NET Core Tools: GitHub, FFmpeg, MySQL, Firebase, Postman, git, Octave, Matlab, XAMPP Databases: MySQL, SQL Server, Firestore, SQLite Concepts: REST APIs, HLS Streaming, OOPs, MVC, ORM, RDBMS Major Projects | 2024 Agrimart \u2014 Laravel, MySQL, Bootstrap\u2013 Built a full-stack e-commerce platform for agricultural products with role-based access.\u2013 Implemented product CRUD, order management, and audit trail for tracking user log.\u2013 Integrated form validation, authentication, and secure middleware-based route protection.\u2013 Designed responsive UI using Bootstrap and followed MVC architecture for clean code separation.\u2013 GitHub: github.com/Mandeep-Bhabhor/agrimart | 2025 V-Stream \u2014 Laravel, FFmpeg, HLS.js, MySQL\u2013 Developed a scalable video streaming platform supporting adaptive bitrate playback using HLS and HLS.js.\u2013 Automated multi-resolution video encoding (480 to 1080p) using FFmpeg and stored outputs in organized directories.\u2013 Integrated creator upload panel, viewer interface, and role-based access control.\u2013 Built HLS playlist generator, and dynamically served videos based on internet speed using HLS.js.\u2013 Followed modular Laravel structure and implemented clean routing.\u2013 GitHub: github.com/Mandeep-Bhabhor/v-stream Mini Projects | 2023 \u2217 Simple role-based login system with hashed passwords and session tracking. | 2025 Login System \u2014 PHP, MySQL LLaMA Chatbot \u2014 Laravel, LLaMA 3B, LaravelOllama \u2217 Connected Meta\u2019s LLaMA 3 3B model running locally with Laravel using a service layer (LaravelOllama), creating a basic AI chatbot prototype inspired by Vibe Coding tutorials. Extracurricular Table Tennis Player & Event Volunteer AAU, Anand \u2014 College and Government Initiatives \u2217 Represented CAIT in inter-college table tennis tournaments and cultural tech festivals. \u2217 Actively participated in Smart Gujarat Government Hackathon and Odoo Hackathon, gaining hands-on experience in team collaboration and real-world problem solving. \u2217 Volunteered in college workshops, and NSS activities; awarded NSS certificate for social contribution and discipline. Profile Summary Final year B.Tech CAIT student passionate about web development and backend engineering. Completed two full-stack Laravel projects including a video streaming system and e-commerce app. Skilled in Laravel, and Firebase. Looking forward to using tech to empower small and local farmers through smart digital solutions.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:49:48.004676",
+    "id": "user-session-1_59"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "what are code standards in review criteria ?",
+    "sender": "user",
+    "timestamp": "2025-07-27T15:50:59.491660",
+    "id": "user-session-1_60"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Review criteria \u25cf Database design - 35% (if using backend as a service e.g firebase,supabase then 15%) \u25cb Schema Design (well-structured database schema with proper relationships, data types) \u25cb Real-time sync (WebSockets, polling etc.) \u25cf Coding Standards- 40% \u25cb Data Validation - Proper validation of user inputs on both frontend and backend. \u25cb Dynamic Values (avoid hardcoding value) \u25cb Code Reusability \u2013 Write modular, reusable components or functions to avoid repetition and improve maintainability. \u25cb Performance - App load fast, minimal network calls (using catch meromry, cookies) \u25cb Error handling (handles invalid inputs and system errors , fallback messages) \u25cb Use a linter on your code to ensure coding standards are followed. \u25cb Complexity of the code (e.g. nested logic, algorithm use) \u25cf UI/UX Design - 15% \u25cb Responsive \u25cb Pagination, breadcrumb \u25cb Search, Filter \u25cb Color combination proper (font color is proper with the background color) \u25cf Team Collaboration - 10% \u25cb All team members are involved in coding.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T15:51:01.543312",
+    "id": "user-session-1_61"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "what are  Technical Skills of mandeep",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:12:44.525444",
+    "id": "user-session-1_62"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep Rameshbhai Bhabhor Gandhinagar, Gujarat, India +91-9313467816 Objective mandeep101009@gmail.com linkedin.com/in/mandeep-bhabhor-305a62334 github.com/Mandeep-Bhabhor Aspiring Laravel Developer with a passion for backend development. Seeking to apply strong web-development skills, problem-solving mindset, and project experience in a challenging role that makes real-world impact. Education Anand Agricultural University (AAU) B.Tech in Information Technology (CAIT) Technical Skills Oct. 2022\u2013 May 2026 Anand, Gujarat Languages: PHP, Python, C, JavaScript, HTML, CSS, SQL Frameworks: Laravel, Bootstrap, React, ASP.NET Core Tools: GitHub, FFmpeg, MySQL, Firebase, Postman, git, Octave, Matlab, XAMPP Databases: MySQL, SQL Server, Firestore, SQLite Concepts: REST APIs, HLS Streaming, OOPs, MVC, ORM, RDBMS Major Projects | 2024 Agrimart \u2014 Laravel, MySQL, Bootstrap\u2013 Built a full-stack e-commerce platform for agricultural products with role-based access.\u2013 Implemented product CRUD, order management, and audit trail for tracking user log.\u2013 Integrated form validation, authentication, and secure middleware-based route protection.\u2013 Designed responsive UI using Bootstrap and followed MVC architecture for clean code separation.\u2013 GitHub: github.com/Mandeep-Bhabhor/agrimart | 2025 V-Stream \u2014 Laravel, FFmpeg, HLS.js, MySQL\u2013 Developed a scalable video streaming platform supporting adaptive bitrate playback using HLS and HLS.js.\u2013 Automated multi-resolution video encoding (480 to 1080p) using FFmpeg and stored outputs in organized directories.\u2013 Integrated creator upload panel, viewer interface, and role-based access control.\u2013 Built HLS playlist generator, and dynamically served videos based on internet speed using HLS.js.\u2013 Followed modular Laravel structure and implemented clean routing.\u2013 GitHub: github.com/Mandeep-Bhabhor/v-stream Mini Projects | 2023 \u2217 Simple role-based login system with hashed passwords and session tracking. | 2025 Login System \u2014 PHP, MySQL LLaMA Chatbot \u2014 Laravel, LLaMA 3B, LaravelOllama \u2217 Connected Meta\u2019s LLaMA 3 3B model running locally with Laravel using a service layer (LaravelOllama), creating a basic AI chatbot prototype inspired by Vibe Coding tutorials. Extracurricular Table Tennis Player & Event Volunteer AAU, Anand \u2014 College and Government Initiatives \u2217 Represented CAIT in inter-college table tennis tournaments and cultural tech festivals. \u2217 Actively participated in Smart Gujarat Government Hackathon and Odoo Hackathon, gaining hands-on experience in team collaboration and real-world problem solving. \u2217 Volunteered in college workshops, and NSS activities; awarded NSS certificate for social contribution and discipline. Profile Summary Final year B.Tech CAIT student passionate about web development and backend engineering. Completed two full-stack Laravel projects including a video streaming system and e-commerce app. Skilled in Laravel, and Firebase. Looking forward to using tech to empower small and local farmers through smart digital solutions.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:12:46.553887",
+    "id": "user-session-1_63"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "extracurriculars of mandeep",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:13:17.147447",
+    "id": "user-session-1_64"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Mandeep's extracurricular activities include playing table tennis, representing his college in tournaments and tech festivals, volunteering in college workshops and NSS activities, and participating in government hackathons. He received an NSS certificate for his social contributions.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:13:19.172948",
+    "id": "user-session-1_65"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "who is dev",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:14:00.991525",
+    "id": "user-session-1_66"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Based on the provided text, \"dev\" is a 21-year-old person who identifies as gay and likes boys. The text also describes them using informal and potentially offensive language.",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:14:03.021801",
+    "id": "user-session-1_67"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "sundar oichai birdday",
+    "sender": "user",
+    "timestamp": "2025-07-27T16:15:20.797797",
+    "id": "user-session-1_68"
+  },
+  {
+    "chat_id": "user-session-1",
+    "message": "Title: Sundar Pichai - Wikipedia Snippet: \"Sundar Pichai, in full Pichai Sundararajan, (born June 10, 1972, Madras [now Chennai], Tamil Nadu, India), Indian-born American executive who was CEO of both Google, Inc. (2015\u2013 ), and \u2026 Title: Sundar Pichai | Biography, Google, & Facts | Britannica Money Snippet: 4 days ago \u00b7 Sundar Pichai, the CEO of Google and Alphabet, has revolutionized technology with his leadership and played a pivotal role in shaping our digital world. Title: Sundar Pichai be...",
+    "sender": "assistant",
+    "timestamp": "2025-07-27T16:15:22.835960",
+    "id": "user-session-1_69"
+  }
+]

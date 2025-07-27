@@ -2,12 +2,13 @@ from fastapi import FastAPI, HTTPException, UploadFile, File
 from pydantic import BaseModel
 import logging
 import os
-from typing import List
+from typing import List, Optional
 import uuid
 import hashlib
 import requests
 import json
 import re
+from datetime import datetime
 
 app = FastAPI(title="Knowledge Base Service", version="1.0.0")
 logging.basicConfig(level=logging.INFO)
@@ -44,144 +45,274 @@ class QueryResponse(BaseModel):
     answer: str
     relevant: bool
     confidence: float
+    source_documents: Optional[List[str]] = []
+    processing_method: str = "unknown"
 
 class IngestResponse(BaseModel):
     message: str
     documents_added: int
+    duplicates_skipped: int = 0
+    files_processed: List[str] = []
 
 @app.post("/ingest", response_model=IngestResponse)
 async def ingest_documents(files: List[UploadFile] = File(...)):
-    """Ingest documents into the knowledge base"""
+    """Ingest documents into the knowledge base with deduplication"""
     documents_added = 0
+    duplicates_skipped = 0
+    files_processed = []
     
     try:
         for file in files:
+            logger.info(f"Processing file: {file.filename}")
             content = await file.read()
             text_content = content.decode('utf-8')
             
-            # Split content into chunks (simple approach)
-            chunks = split_text(text_content)
+            # Create content hash for deduplication
+            content_hash = hashlib.md5(text_content.encode()).hexdigest()
+            
+            # Split content into chunks with better overlap
+            chunks = split_text_with_overlap(text_content)
+            logger.info(f"Split {file.filename} into {len(chunks)} chunks")
             
             if USE_EMBEDDINGS:
+                # Check for existing content by hash in metadata
+                existing_docs = collection.get(where={"content_hash": content_hash})
+                if existing_docs['ids']:
+                    logger.info(f"Skipping duplicate file: {file.filename}")
+                    duplicates_skipped += 1
+                    continue
+                
                 # Use ChromaDB with embeddings
                 for i, chunk in enumerate(chunks):
                     doc_id = f"{file.filename}_{i}_{uuid.uuid4()}"
                     embedding = embedding_model.encode([chunk])[0].tolist()
                     
+                    metadata = {
+                        "filename": file.filename,
+                        "chunk_id": i,
+                        "content_hash": content_hash,
+                        "upload_timestamp": datetime.now().isoformat(),
+                        "chunk_length": len(chunk)
+                    }
+                    
                     collection.add(
                         embeddings=[embedding],
                         documents=[chunk],
-                        metadatas=[{"filename": file.filename, "chunk_id": i}],
+                        metadatas=[metadata],
                         ids=[doc_id]
                     )
                     documents_added += 1
             else:
+                # Check for duplicates in simple storage
+                existing_hashes = [doc.get('content_hash') for doc in document_store]
+                if content_hash in existing_hashes:
+                    logger.info(f"Skipping duplicate file: {file.filename}")
+                    duplicates_skipped += 1
+                    continue
+                
                 # Use simple text storage
                 for i, chunk in enumerate(chunks):
                     doc_entry = {
                         "id": f"{file.filename}_{i}_{uuid.uuid4()}",
                         "text": chunk,
                         "filename": file.filename,
-                        "chunk_id": i
+                        "chunk_id": i,
+                        "content_hash": content_hash,
+                        "upload_timestamp": datetime.now().isoformat(),
+                        "chunk_length": len(chunk)
                     }
                     document_store.append(doc_entry)
                     documents_added += 1
+            
+            files_processed.append(file.filename)
+        
+        logger.info(f"Ingestion complete: {documents_added} chunks added, {duplicates_skipped} duplicates skipped")
         
         return IngestResponse(
-            message=f"Successfully ingested {len(files)} files",
-            documents_added=documents_added
+            message=f"Successfully processed {len(files)} files",
+            documents_added=documents_added,
+            duplicates_skipped=duplicates_skipped,
+            files_processed=files_processed
         )
     
     except Exception as e:
         logger.error(f"Error ingesting documents: {e}")
-        raise HTTPException(status_code=500, detail="Failed to ingest documents")
+        raise HTTPException(status_code=500, detail=f"Failed to ingest documents: {str(e)}")
 
 @app.get("/query", response_model=QueryResponse)
 async def query_knowledge_base(text: str):
     """Query the knowledge base using semantic search or simple text matching"""
     try:
+        logger.info(f"🔍 Querying knowledge base for: '{text}'")
+        
         if USE_EMBEDDINGS:
             # Generate embedding for the query
             query_embedding = embedding_model.encode([text])[0].tolist()
             
-            # Search in ChromaDB
+            # Search in ChromaDB - get more results to search comprehensively
             results = collection.query(
                 query_embeddings=[query_embedding],
-                n_results=3
+                n_results=10  # Increased from 3 to search more documents
             )
             
             if not results['documents'] or not results['documents'][0]:
+                logger.info("❌ No documents found in ChromaDB")
                 return QueryResponse(
                     answer="No relevant information found in knowledge base.",
                     relevant=False,
-                    confidence=0.0
+                    confidence=0.0,
+                    processing_method="embeddings"
                 )
             
-            # Get the best match
-            best_match = results['documents'][0][0]
-            confidence = 1.0 - results['distances'][0][0] if results['distances'][0] else 0.0
-            
-            # Consider relevant if confidence is above threshold
-            is_relevant = confidence > 0.4  # Increased threshold for better precision
-            
-            if is_relevant:
-                # Enhance with Gemini if available
-                enhanced_answer = await enhance_answer_with_gemini(text, best_match)
-                final_answer = enhanced_answer if enhanced_answer else best_match
-                
-                # Double-check if the enhanced answer is actually useful
-                if (final_answer.startswith("No relevant information") or 
-                    final_answer.startswith("This document does not contain") or
-                    len(final_answer.strip()) < 20):
-                    is_relevant = False
-                    final_answer = "No sufficiently relevant information found in knowledge base."
-            else:
-                final_answer = "No sufficiently relevant information found in knowledge base."
-            
-            return QueryResponse(
-                answer=final_answer,
-                relevant=is_relevant,
-                confidence=confidence if is_relevant else 0.0
-            )
-        else:
-            # Simple text matching fallback
-            query_lower = text.lower()
+            # Analyze ALL results, not just the first one
             best_match = None
-            best_score = 0
+            best_confidence = 0.0
+            best_metadata = None
+            source_docs = []
             
-            for doc in document_store:
-                doc_text = doc['text'].lower()
-                # Simple keyword matching score
-                words = query_lower.split()
-                score = sum(1 for word in words if word in doc_text) / len(words) if words else 0
+            documents = results['documents'][0]
+            distances = results['distances'][0] if results['distances'] else []
+            metadatas = results['metadatas'][0] if results['metadatas'] else []
+            
+            logger.info(f"📊 Found {len(documents)} potential matches")
+            
+            for i, (doc, distance, metadata) in enumerate(zip(documents, distances, metadatas)):
+                confidence = 1.0 - distance if distance is not None else 0.0
+                filename = metadata.get('filename', 'unknown') if metadata else 'unknown'
                 
-                if score > best_score:
-                    best_score = score
-                    best_match = doc['text']
+                logger.info(f"  {i+1}. {filename} - Confidence: {confidence:.3f}")
+                
+                # Lower threshold to catch more relevant results
+                if confidence > 0.2:  # Lowered from 0.4 to 0.2
+                    if confidence > best_confidence:
+                        best_confidence = confidence
+                        best_match = doc
+                        best_metadata = metadata
+                    
+                    source_docs.append(f"{filename} (confidence: {confidence:.3f})")
             
-            if best_match and best_score > 0.3:  # Increased threshold
-                # Enhance with Gemini if available
-                enhanced_answer = await enhance_answer_with_gemini(text, best_match)
+            if best_match and best_confidence > 0.2:
+                logger.info(f"✅ Best match found with confidence {best_confidence:.3f}")
+                
+                # Try multiple documents if confidence is low
+                context_docs = []
+                if best_confidence < 0.5 and len(documents) > 1:
+                    # Combine top 3 results for better context
+                    for i in range(min(3, len(documents))):
+                        if (1.0 - distances[i]) > 0.15:  # Even lower threshold for context
+                            context_docs.append(documents[i])
+                    
+                    if context_docs:
+                        combined_context = "\n\n".join(context_docs)
+                        enhanced_answer = await enhance_answer_with_gemini(text, combined_context)
+                    else:
+                        enhanced_answer = await enhance_answer_with_gemini(text, best_match)
+                else:
+                    enhanced_answer = await enhance_answer_with_gemini(text, best_match)
+                
                 final_answer = enhanced_answer if enhanced_answer else best_match
                 
-                # Double-check if the enhanced answer is actually useful
-                is_relevant = not (
-                    final_answer.startswith("No relevant information") or 
-                    final_answer.startswith("This document does not contain") or
-                    len(final_answer.strip()) < 20
+                # More lenient validation of the enhanced answer
+                is_useful = (
+                    final_answer and
+                    len(final_answer.strip()) > 10 and
+                    not final_answer.lower().startswith("no relevant information") and
+                    not final_answer.lower().startswith("this document does not contain") and
+                    not final_answer.lower().startswith("i don't have information")
                 )
                 
-                if is_relevant:
+                if is_useful:
                     return QueryResponse(
                         answer=final_answer,
                         relevant=True,
-                        confidence=best_score
+                        confidence=best_confidence,
+                        source_documents=source_docs[:3],  # Top 3 sources
+                        processing_method="embeddings"
                     )
             
+            logger.info("❌ No sufficiently relevant information found in embeddings")
+            return QueryResponse(
+                answer="No sufficiently relevant information found in knowledge base.",
+                relevant=False,
+                confidence=0.0,
+                processing_method="embeddings"
+            )
+        
+        else:
+            # Enhanced text matching fallback
+            logger.info("🔤 Using text-based search fallback")
+            query_lower = text.lower()
+            query_words = set(query_lower.split())
+            
+            matches = []
+            
+            for doc in document_store:
+                doc_text = doc['text'].lower()
+                doc_words = set(doc_text.split())
+                
+                # Multiple scoring methods
+                # 1. Keyword overlap score
+                overlap_score = len(query_words.intersection(doc_words)) / len(query_words) if query_words else 0
+                
+                # 2. Substring matching score
+                substring_score = sum(1 for word in query_words if word in doc_text) / len(query_words) if query_words else 0
+                
+                # 3. Phrase matching bonus
+                phrase_score = 1.0 if query_lower in doc_text else 0.0
+                
+                # Combined score with weights
+                combined_score = (overlap_score * 0.4) + (substring_score * 0.4) + (phrase_score * 0.2)
+                
+                if combined_score > 0.1:  # Lower threshold for text search
+                    matches.append({
+                        'doc': doc,
+                        'score': combined_score,
+                        'text': doc['text']
+                    })
+            
+            # Sort by score
+            matches.sort(key=lambda x: x['score'], reverse=True)
+            
+            logger.info(f"📊 Found {len(matches)} text matches")
+            
+            if matches:
+                best_match = matches[0]
+                logger.info(f"✅ Best text match with score {best_match['score']:.3f}")
+                
+                # Use top matches for context if score is low
+                if best_match['score'] < 0.4 and len(matches) > 1:
+                    top_texts = [m['text'] for m in matches[:3]]
+                    combined_text = "\n\n".join(top_texts)
+                    enhanced_answer = await enhance_answer_with_gemini(text, combined_text)
+                else:
+                    enhanced_answer = await enhance_answer_with_gemini(text, best_match['text'])
+                
+                final_answer = enhanced_answer if enhanced_answer else best_match['text']
+                
+                # More lenient validation
+                is_useful = (
+                    final_answer and
+                    len(final_answer.strip()) > 10 and
+                    not final_answer.lower().startswith("no relevant information") and
+                    not final_answer.lower().startswith("this document does not contain")
+                )
+                
+                if is_useful:
+                    source_docs = [f"{m['doc']['filename']} (score: {m['score']:.3f})" for m in matches[:3]]
+                    return QueryResponse(
+                        answer=final_answer,
+                        relevant=True,
+                        confidence=best_match['score'],
+                        source_documents=source_docs,
+                        processing_method="text_search"
+                    )
+            
+            logger.info("❌ No sufficiently relevant information found in text search")
             return QueryResponse(
                 answer="No relevant information found in knowledge base.",
                 relevant=False,
-                confidence=0.0
+                confidence=0.0,
+                processing_method="text_search"
             )
     
     except Exception as e:
@@ -265,26 +396,38 @@ def clean_text(text: str) -> str:
     
     return text
 
-def split_text(text: str, chunk_size: int = 500) -> List[str]:
-    """Simple text splitting into chunks"""
+def split_text_with_overlap(text: str, chunk_size: int = 500, overlap: int = 50) -> List[str]:
+    """Split text into chunks with overlap for better context preservation"""
     words = text.split()
     chunks = []
-    current_chunk = []
-    current_size = 0
+    start = 0
     
-    for word in words:
-        current_chunk.append(word)
-        current_size += len(word) + 1  # +1 for space
+    while start < len(words):
+        # Calculate end position
+        end = min(start + chunk_size, len(words))
         
-        if current_size >= chunk_size:
-            chunks.append(' '.join(current_chunk))
-            current_chunk = []
-            current_size = 0
-    
-    if current_chunk:
-        chunks.append(' '.join(current_chunk))
+        # Create chunk
+        chunk_words = words[start:end]
+        chunk_text = ' '.join(chunk_words)
+        
+        # Only add non-empty chunks
+        if chunk_text.strip():
+            chunks.append(chunk_text)
+        
+        # Move start position with overlap
+        if end >= len(words):
+            break
+        start = end - overlap
+        
+        # Ensure we don't go backwards
+        if start <= 0:
+            start = end
     
     return chunks
+
+def split_text(text: str, chunk_size: int = 500) -> List[str]:
+    """Simple text splitting into chunks (fallback)"""
+    return split_text_with_overlap(text, chunk_size, 0)
 
 if __name__ == "__main__":
     import uvicorn
