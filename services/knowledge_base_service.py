@@ -35,8 +35,35 @@ except ImportError as e:
     logger.info("Falling back to simple text storage")
     USE_EMBEDDINGS = False
     
-    # Simple in-memory storage as fallback
+    # Simple file-based storage as fallback
+    STORAGE_FILE = "knowledge_base_storage.json"
     document_store = []
+    
+    # Load existing documents from file on startup
+    def load_documents_from_file():
+        global document_store
+        try:
+            if os.path.exists(STORAGE_FILE):
+                with open(STORAGE_FILE, 'r', encoding='utf-8') as f:
+                    document_store = json.load(f)
+                logger.info(f"Loaded {len(document_store)} documents from storage file")
+            else:
+                document_store = []
+                logger.info("No existing storage file found, starting with empty knowledge base")
+        except Exception as e:
+            logger.error(f"Error loading documents from file: {e}")
+            document_store = []
+    
+    def save_documents_to_file():
+        try:
+            with open(STORAGE_FILE, 'w', encoding='utf-8') as f:
+                json.dump(document_store, f, ensure_ascii=False, indent=2)
+            logger.info(f"Saved {len(document_store)} documents to storage file")
+        except Exception as e:
+            logger.error(f"Error saving documents to file: {e}")
+    
+    # Load documents on startup
+    load_documents_from_file()
 
 class QueryRequest(BaseModel):
     text: str
@@ -123,8 +150,15 @@ async def ingest_documents(files: List[UploadFile] = File(...)):
                     }
                     document_store.append(doc_entry)
                     documents_added += 1
+                
+                # Save to file after adding documents
+                save_documents_to_file()
             
             files_processed.append(file.filename)
+        
+        # Save to file after processing all files (for embeddings mode too)
+        if not USE_EMBEDDINGS:
+            save_documents_to_file()
         
         logger.info(f"Ingestion complete: {documents_added} chunks added, {duplicates_skipped} duplicates skipped")
         
