@@ -34,7 +34,8 @@ http://localhost:8080
 
 ```bash
 # Environment Variables (Optional)
-GEMINI_API_KEY=your-api-key    # Already configured
+#from https://aistudio.google.com/app/apikey
+GEMINI_API_KEY=your-api-key    
 MONGO_URL=mongodb://localhost:27017/
 ```
 
