@@ -1,21 +1,14 @@
-#  AI Assistant - Complete Microservices System
+# 🤖 AI Assistant - Microservices System
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="60" height="60" style="animation: bounce 2s infinite; margin: 10px;"/>
-  <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" width="60" height="60" style="animation: pulse 2s infinite; margin: 10px;"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="60" height="60" style="animation: bounce 2s infinite; margin: 10px;"/>
-  
-  <h3 style="background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: fadeInUp 1s ease-out;">
-    A comprehensive AI assistant system built with microservices architecture
-  </h3>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="50" height="50"/>
+  <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" width="50" height="50"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="50" height="50"/>
 </div>
 
-<div align="center" style="margin: 30px 0;">
-  <img src="https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/FastAPI-Framework-green?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
-  <img src="https://img.shields.io/badge/Microservices-Architecture-orange?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Microservices"/>
-  <img src="https://img.shields.io/badge/AI-Powered-purple?style=for-the-badge&logo=openai&logoColor=white" alt="AI Powered"/>
-</div>
+[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat&logo=python)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Framework-green?style=flat&logo=fastapi)](https://fastapi.tiangolo.com)
+[![Microservices](https://img.shields.io/badge/Microservices-Architecture-orange?style=flat)](https://microservices.io)
 
 ## ⚡ Quick Start
 
@@ -23,165 +16,100 @@
 # 1. Install dependencies
 python install.py
 
-# 2. Start all services
+# 2. Start all services  
 python run_services.py
 
 # 3. Open browser
 http://localhost:8080
 ```
 
+## 🔧 Configuration
 
-### 📄 Environment Configuration
+**Create `.env` file:**
+```bash
+cp .env.example .env
+```
 
-1. **Copy the Example File:**
+**Required settings:**
+```env
+GEMINI_API_KEY=your-api-key    # Get from Google AI Studio
+MONGO_URL=mongodb://localhost:27017/
+```
 
-   Run the following command to create your `.env` file from the example:
+## 🌐 Services & Ports
 
-   ```bash
-   cp .env.example .env
-   ```
-
-2. **Open `.env` and Configure Your API Keys:**
-
-   * Get your **GEMINI\_API\_KEY** from [Google AI Studio](https://aistudio.google.com/app/apikey).
-   * Set your **MongoDB connection URI**. If running locally, use:
-
-     ```
-     MONGO_URL=mongodb://localhost:27017/
-     ```
-
-3. **Example `.env` File:**
-
-   ```env
-   # Gemini API Key from Google AI Studio
-   GEMINI_API_KEY=your-api-key
-
-   # MongoDB connection string
-   MONGO_URL=mongodb://localhost:27017/
-   ```
-
-
-
-**Service Ports:**
-- 🌐 Web Interface: `8080`
-- 💬 Chat Service: `8000`
-- 📚 Knowledge Base: `8001`
-- 🔍 Search Service: `8002`
-- 📝 History Service: `8003`
+| Service | Port | Function |
+|---------|------|----------|
+| 🌐 Web Interface | 8080 | Chat UI & Admin |
+| 💬 Chat Service | 8000 | Main coordinator |
+| 📚 Knowledge Base | 8001 | Document storage |
+| 🔍 Search Service | 8002 | Web search |
+| 📝 History Service | 8003 | Chat history |
 
 ## ✨ Features
 
-- 🎨 **Modern Web Interface** - Beautiful chat UI with admin panel
-- 🧠 **Smart Responses** - Knowledge base + web search + Gemini AI
-- 💾 **Persistent History** - Chat conversations saved across sessions
-- 📁 **Document Upload** - Easy knowledge base management
-- 📊 **Real-time Status** - Live system monitoring
+- 🎨 **Modern Web UI** - Clean chat interface with admin panel
+- 🧠 **Smart AI** - Knowledge base + web search + Gemini AI
+- 💾 **Chat History** - Persistent conversation storage
+- 📁 **File Upload** - Drag-and-drop document ingestion
+- 📊 **Real-time Status** - Live service monitoring
 - 🔄 **Graceful Fallbacks** - Works with minimal dependencies
 
-## 🏗️ Architecture
+## 📚 Knowledge Base Usage
 
-### 🔧 Microservices
-- **Chat Service** - Central coordinator
-- **Knowledge Base** - Document storage & search
-- **Search Service** - Web search + AI enhancement
-- **History Service** - Conversation storage
-- **Web GUI** - Modern interface
-
-### 📊 Data Flow
-User → Web Interface → Chat Service → Knowledge Base/Search → Gemini AI → Response
-
-## 🌐 Web Interface
-
-### 💬 Main Chat
-- Real-time responses with typing indicators
-- Source attribution (knowledge base/web search)
-- Quick action buttons
-- Drag-and-drop file upload
-- Multiple chat sessions
-
-### 🛠️ Admin Panel
-- System status monitoring
-- Service health checks
-- API documentation
-- Configuration settings
-
-## 📚 Knowledge Base
-
-**Upload Documents:**
-1. Go to main chat interface
+1. Open chat interface
 2. Use "Upload Knowledge" sidebar
-3. Select files (.txt, .md, .pdf)
-4. Click "Upload Files"
+3. Upload files (.txt, .md, .pdf)
+4. Ask questions about uploaded content
 
-**Test Questions:**
-- "What is artificial intelligence?"
-- "What are machine learning types?"
-- "Why use Python for AI?"
-
-## 🔗 API Endpoints
-
-| Service | Port | Key Endpoints |
-|---------|------|---------------|
-| 💬 Chat | 8000 | `/chat`, `/health` |
-| 📚 Knowledge | 8001 | `/query`, `/ingest`, `/stats` |
-| 🔍 Search | 8002 | `/search`, `/health` |
-| 📝 History | 8003 | `/history`, `/stats` |
-
-## 🧪 Testing
+## 🧪 Testing or use POSTMAN with goven ports(API Services:
+💬 Chat Service:       http://localhost:8000
+📚 Knowledge Base:     http://localhost:8001
+🔍 Search Service:     http://localhost:8002
+📝 History Service:    http://localhost:8003)
 
 ```bash
-# Quick system test
+# System test
 python test_final.py
 
-# Manual API test
+# API test
 curl -X POST "http://localhost:8000/chat" \
   -H "Content-Type: application/json" \
   -d '{"chat_id": "test", "message": "What is AI?"}'
 ```
 
-## 🛠️ Requirements
+## 📋 Requirements
 
-**Core (Required):**
-- Python 3.8+
-- FastAPI, Uvicorn, Requests
+**Core:** Python 3.8+, FastAPI, Uvicorn, Requests  
+**Optional:** ChromaDB, MongoDB, DuckDuckGo Search
 
-**Optional (Enhanced Features):**
-- ChromaDB + Sentence Transformers (embeddings)
-- MongoDB (history storage)
-- DuckDuckGo Search (web search)
+## 🚨 Common Issues
 
-## 🚨 Troubleshooting
+- **Services won't start:** Check ports 8000-8003, 8080 are free
+- **Upload fails:** Use supported formats (.txt, .md, .pdf)
+- **No search:** System falls back to direct Gemini AI
+- **No history:** Falls back to JSON file storage
 
-| Issue | Solution |
-|-------|----------|
-| 🚫 Services won't start | Check ports 8000-8003, 8080 available |
-| 📁 Upload fails | Check file format (.txt, .md supported) |
-| 🔍 Search not working | System falls back to Gemini direct |
-| 💾 History not saving | Falls back to JSON file storage |
-
-## 📁 Project Structure
+## 📁 Structure
 
 ```
 ai-assistant/
-├── services/           # Microservices
-├── templates/          # Web interface
-├── web_gui.py         # Web server
-├── run_services.py    # Service launcher
-└── install.py         # Dependency installer
+├── services/
+│   ├── chat_service.py          # Main orchestrator
+│   ├── knowledge_base_service.py # Document storage & search
+│   ├── search_service.py        # Web search with Gemini
+│   └── history_service.py       # Conversation storage
+├── templates/
+│   ├── index.html              # Main chat interface
+│   └── admin.html              # Admin panel
+├── web_gui.py                  # Web interface server
+├── run_services.py             # Start all services
+├── install.py                  # Dependency installer
+├── requirements.txt            # Python dependencies
+├── sample_knowledge.txt        # Sample AI/ML knowledge
+└── README.md                   # This file
 ```
-
-## ✅ 1-Day Challenge Compliance
-
-✅ Microservices Architecture  
-✅ Chat Functionality  
-✅ Knowledge Base  
-✅ Web Search Fallback  
-✅ Conversation History  
-✅ Error Handling  
-✅ Complete Documentation  
 
 ---
 
-<div align="center">
-  <strong>🚀 Ready to chat with your AI assistant!</strong>
-</div>
+**🚀 Complete AI assistant with microservices architecture, knowledge base, and web search!**
