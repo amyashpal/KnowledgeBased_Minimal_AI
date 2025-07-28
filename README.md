@@ -30,14 +30,37 @@ python run_services.py
 http://localhost:8080
 ```
 
-## ⚙️ Configuration
 
-```bash
-# Environment Variables (Optional)
-#from https://aistudio.google.com/app/apikey
-GEMINI_API_KEY=your-api-key    
-MONGO_URL=mongodb://localhost:27017/
-```
+### 📄 Environment Configuration
+
+1. **Copy the Example File:**
+
+   Run the following command to create your `.env` file from the example:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Open `.env` and Configure Your API Keys:**
+
+   * Get your **GEMINI\_API\_KEY** from [Google AI Studio](https://aistudio.google.com/app/apikey).
+   * Set your **MongoDB connection URI**. If running locally, use:
+
+     ```
+     MONGO_URL=mongodb://localhost:27017/
+     ```
+
+3. **Example `.env` File:**
+
+   ```env
+   # Gemini API Key from Google AI Studio
+   GEMINI_API_KEY=your-api-key
+
+   # MongoDB connection string
+   MONGO_URL=mongodb://localhost:27017/
+   ```
+
+
 
 **Service Ports:**
 - 🌐 Web Interface: `8080`
